@@ -4,6 +4,7 @@
 
 <html>
     <head>
+		<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
         <title>Life Figure-Outer Application</title>
         <link rel="stylesheet" type="text/css" href="lifestyle.css"/>
         <script type="text/javascript" src="indexscript.js"></script>
@@ -16,13 +17,13 @@
             </div>
             <div id="menubar">
                 <ul>
-                    <li><a class="menuelement" title="There's nothing better than">Home</a></li>
-                    <li><a class="menuelement" title="You definitely don't share these">Interests</a></li>
-                    <li><a class="menuelement" title="It's bad for your">Health</a></li>
-                    <li><a class="menuelement" title="Don't we wish we were all">Academic</a></li>
-                    <li><a class="menuelement" title="We're all this... Right?">Professional</a></li>
-                    <li><a class="menuelement" title="Nothing beats">Fun</a></li>
-                    <li><a class="menuelement" title="Everyone is just a little">Evil</a></li>
+                    <li><a class="menuelement" href="#" title="There's nothing better than">Home</a></li>
+                    <li><a class="menuelement" href="#" title="You definitely don't share these">Interests</a></li>
+                    <li><a class="menuelement" href="#" title="It's bad for your">Health</a></li>
+                    <li><a class="menuelement" href="#" title="Don't we wish we were all">Academic</a></li>
+                    <li><a class="menuelement" href="#" title="We're all this... Right?">Professional</a></li>
+                    <li><a class="menuelement" href="#" title="Nothing beats">Fun</a></li>
+                    <li><a class="menuelement" href="#" title="Everyone is just a little">Evil</a></li>
                 </ul>
             </div>
             <div id="rightpanel">
@@ -37,22 +38,21 @@
                         <input type="text" id="how_feel_text" name="how_feel_text"/>
                     </div>
                     <div class="internaltext">
-                        How would you like to feel?
-                        <select multiple="multiple" size ="4">
+                        <label for="feelings_selection">How would you like to feel? (choose all that apply)</label>
+                        <select multiple="true" size ="4" name="feelings_selection">
                             <option>Comfortably numb</option>
                             <option>Grumpy as poop, you jerk</option>
                             <option>Happy like I'm on controlled substances</option>
                             <option>Normal. Absolutely Normal.</option>
                         </select>
                         <br/>
-                        (choose all that apply)
                     </div>
                     <br/>
                     <input type="submit" id="submitbtn" value="Feel me!"/>
                 </form>
             </div>
             <div id="footer">
-                &copy; 2011 Borg-LIke Monstrosity of Mind Control, Inc. All rights reserved.
+                <p>&copy; 2011 Borg-LIke Monstrosity of Mind Control, Inc. All rights reserved.</p>
             </div>
         </div>
     </body>
