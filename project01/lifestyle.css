@@ -1,5 +1,10 @@
 body{
-
     font-family: Sans-serif;
     background-color: #aaaaaa;
+}
+
+li {
+    list-style-type: none;
+    color: #ffffff;
+    background-color: #000000;
 }
