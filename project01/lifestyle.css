@@ -28,7 +28,7 @@ h5 {
     margin-right: 40px;
     background-color: fcfcfc;
 }
-a.menuelement:hover { /* change to blue on mouseover */
+a.menuelement:hover { 
     color: #0000ff;
 }
 
