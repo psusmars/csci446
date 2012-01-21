@@ -7,6 +7,23 @@ body{
 #headers {
     background-color: cccccc;
 }
+#main {
+    border-right-style: solid;
+
+    border-left-style: solid;
+
+    border-bottom-style: solid;
+
+    border-top-style: solid;
+    
+    border-right-width: 1px;
+    border-left-width: 1px;
+    border-bottom-width: 1px;
+    border-top-width: 1px;
+    margin-left: 38px;
+    margin-right: 40px;
+    background-color: fcfcfc;
+}
 
 #menubar ul {
     list-style-type: none;
