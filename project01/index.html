@@ -6,6 +6,7 @@
     <head>
         <title>Life Figure-Outer Application</title>
         <link rel="stylesheet" type="text/css" href="lifestyle.css"/>
+        <script type="text/javascript" src="indexscript.js"></script>
     </head>
     <body>
         <div id="main">
@@ -15,13 +16,13 @@
             </div>
             <div id="menubar">
                 <ul>
-                    <li><a title="There's nothing better than">Home</a></li>
-                    <li><a title="You definitely don't share these">Interests</a></li>
-                    <li><a title="It's bad for your">Health</a></li>
-                    <li><a title="Don't we wish we were all"></a>Academic</li>
-                    <li><a title="We're all this... Right?"></a>Professional</li>
-                    <li><a title="Nothing beats"></a>Fun</li>
-                    <li><a title="Everyone is just a little"></a>Evil</li>
+                    <li><a class="menuelement" title="There's nothing better than">Home</a></li>
+                    <li><a class="menuelement" title="You definitely don't share these">Interests</a></li>
+                    <li><a class="menuelement" title="It's bad for your">Health</a></li>
+                    <li><a class="menuelement" title="Don't we wish we were all"></a>Academic</li>
+                    <li><a class="menuelement" title="We're all this... Right?"></a>Professional</li>
+                    <li><a class="menuelement" title="Nothing beats"></a>Fun</li>
+                    <li><a class="menuelement" title="Everyone is just a little"></a>Evil</li>
                 </ul>
             </div>
             <div id="rightpanel">
@@ -34,7 +35,7 @@
                     How do you feel today?
                     <input type="text" id="how_feel_text" name="how_feel_text"/>
                     <br/>
-                    
+                    <input type="submit" id="submitbtn" value="Feel me!"/>
                 </form>
             </div>
         </div>

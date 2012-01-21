@@ -24,6 +24,9 @@ body{
     margin-right: 40px;
     background-color: fcfcfc;
 }
+a.menuelement:hover { /* change to blue on mouseover */
+     color: #0000ff;
+}
 
 #menubar ul {
     list-style-type: none;
