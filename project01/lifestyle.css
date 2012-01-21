@@ -8,7 +8,7 @@ body{
     background-color: cccccc;
 }
 h5 {
-    
+
     color: 666666;
 }
 #main {
@@ -19,7 +19,7 @@ h5 {
     border-bottom-style: solid;
 
     border-top-style: solid;
-    
+
     border-right-width: 1px;
     border-left-width: 1px;
     border-bottom-width: 1px;
@@ -29,7 +29,16 @@ h5 {
     background-color: fcfcfc;
 }
 a.menuelement:hover { /* change to blue on mouseover */
-     color: #0000ff;
+    color: #0000ff;
+}
+
+select {
+    position: absolute;
+    left: 17%;
+}
+#how_feel_text {
+    position: relative;
+    left: 2%;
 }
 
 #menubar ul {
@@ -46,7 +55,8 @@ a.menuelement:hover { /* change to blue on mouseover */
     padding-top: 11px;
 }
 div.internaltext, h2 {
-	margin-left:10px;
+    margin-left:10px;
+    margin-bottom: 1%;
 }
 #menubar ul li { 
     display: inline; 
