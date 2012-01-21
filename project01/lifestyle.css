@@ -7,6 +7,10 @@ body{
 #headers {
     background-color: cccccc;
 }
+h5 {
+    
+    color: 666666;
+}
 #main {
     border-right-style: solid;
 
@@ -41,7 +45,17 @@ a.menuelement:hover { /* change to blue on mouseover */
     padding-bottom: 13px;
     padding-top: 11px;
 }
+div.internaltext, h2 {
+	margin-left:10px;
+}
 #menubar ul li { 
     display: inline; 
     padding-right: 3%;
+}
+#rightpanel {
+    float: right;
+    background-color: f0f0ff;
+    position: relative;
+    top: 9px;
+    right: 10px;
 }
