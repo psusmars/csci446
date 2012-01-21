@@ -1,10 +1,27 @@
 body{
     font-family: Sans-serif;
     background-color: #aaaaaa;
+    color: 000000;
 }
 
-li {
+#headers {
+    background-color: cccccc;
+}
+
+#menubar ul {
     list-style-type: none;
     color: #ffffff;
     background-color: #000000;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding-right: 0px;
+    padding-left: 10px;
+    padding-bottom: 13px;
+    padding-top: 11px;
+}
+#menubar ul li { 
+    display: inline; 
+    padding-right: 3%;
 }
