@@ -10,6 +10,8 @@ class Player
 	if warrior.feel.wall?
 		warrior.pivot!
 	else
+		infront = warrior.look
+		
 		if !(@rescued)
 			if warrior.feel(:backward).empty?
 				check_health_and_heal(warrior, :backward)
@@ -18,13 +20,13 @@ class Player
 				@rescued = true
 			end
 		else	
-			if warrior.feel.empty?
+			if warrior.feel.empty? and !(infront[1].enemy?)
 				check_health_and_heal(warrior, :forward)
 			else
 				if warrior.feel.captive?
 					warrior.rescue!
 				else
-					warrior.attack!
+					warrior.shoot!
 				end
 			end
 		end
