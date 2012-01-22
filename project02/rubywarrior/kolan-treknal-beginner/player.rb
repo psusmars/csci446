@@ -29,11 +29,12 @@ class Player
 	end
 	
 	def check_health_and_heal(warrior, direction)
-	if warrior.health < 15
+	if warrior.health < 12
 		if taking_damage(warrior)
 			warrior.walk!(:backward)
 		else
 			warrior.rest!
+		end
 	else
 		warrior.walk!(direction)
 	end
