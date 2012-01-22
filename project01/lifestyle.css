@@ -13,7 +13,6 @@ body{
     margin-bottom: 0px;
     margin-top: 0px;
     padding-right: 10px;
-
     padding-bottom: 10px;
     padding-top: 8px;
 }
@@ -43,13 +42,9 @@ h6 {
 }
 #main {
     border-right-style: solid;
-
     border-left-style: solid;
-
     border-bottom-style: solid;
-
     border-top-style: solid;
-
     border-right-width: 1px;
     border-left-width: 1px;
     border-bottom-width: 1px;
