@@ -18,7 +18,7 @@ body{
     padding-top: 10px;
 }
 h5 h1 {
-    
+
     color: #666666;
     margin-left: 5px;
     height: 100%;
@@ -53,8 +53,8 @@ a:hover {
 }
 
 select {
-    position: absolute;
-    left: 17%;
+    position: relative;
+    left: 1%;
 }
 #how_feel_text {
     position: relative;
@@ -96,4 +96,11 @@ div.internaltext, h2 {
     padding-left: 5px;
     padding-bottom: 5px;
     padding-top: 5px;
+}
+#footer_text{
+    left: 50px;
+    font-size: 12px;
+}
+#submit_btn {
+    left: 10px;
 }

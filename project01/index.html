@@ -34,24 +34,25 @@
                 <h2>Lorem Ipsum Dolor Sit Amet.</h2>
                 <form name="indexform" onsubmit="return ValidateOnSubmit()">
                     <div class="internaltext">
-                        How do you feel today?
+                        <label for="how_feel_text">How do you feel today?</label>
                         <input type="text" id="how_feel_text" name="how_feel_text"/>
                     </div>
                     <div class="internaltext">
-                        <label for="feelings_selection">How would you like to feel? <br/>(choose all that apply)</label>
+                        <label for="feelings_selection">How would you like to feel?</label>
                         <select multiple="true" size ="4" name="feelings_selection">
                             <option>Comfortably numb</option>
                             <option>Grumpy as poop, you jerk</option>
                             <option>Happy like I'm on controlled substances</option>
                             <option>Normal. Absolutely Normal.</option>
                         </select>
+                        <p>(choose all that apply)</p>
                     </div>
                     <br/>
                     <input type="submit" id="submitbtn" value="Feel me!"/>
                 </form>
             </div>
             <div id="footer">
-                <p>&copy; 2011 Borg-LIke Monstrosity of Mind Control, Inc. All rights reserved.</p>
+                <p id="footer_text">&copy; 2011 Borg-LIke Monstrosity of Mind Control, Inc. All rights reserved.</p>
             </div>
         </div>
     </body>
