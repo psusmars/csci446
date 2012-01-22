@@ -6,7 +6,7 @@ class Player
 	
 	def play_turn(warrior)
 	if warrior.feel.empty?
-		if warrior.health < 12 and !(@health > warrior.health)
+		if warrior.health < 15 and !(@health > warrior.health)
 			warrior.rest!
 		else
 			warrior.walk!
