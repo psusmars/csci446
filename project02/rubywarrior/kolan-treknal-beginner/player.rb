@@ -34,6 +34,7 @@ class Player
 	@health = warrior.health
 	end
 	
+	private
 	def check_health_and_heal(warrior, direction)
 	if warrior.health < 15
 		if taking_damage(warrior)
@@ -50,6 +51,7 @@ class Player
 	end
 	end
 	
+	private
 	def taking_damage(warrior)
 		@health > warrior.health
 	end
