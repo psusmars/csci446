@@ -1,15 +1,27 @@
 body{
     font-family: Sans-serif;
     background-color: #aaaaaa;
-    color: 000000;
+    color: #000000;
 }
 
 #headers {
     background-color: #cccccc;
-}
-h5 {
+    height: 100%;
+    padding-left: 10px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding-right: 10px;
 
-    color: 666666;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+h5 h1 {
+    
+    color: #666666;
+    margin-left: 5px;
+    height: 100%;
 }
 #main {
     border-right-style: solid;
@@ -80,4 +92,8 @@ div.internaltext, h2 {
 
 #footer {
     background-color: #F0F0F0;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    padding-top: 5px;
 }
