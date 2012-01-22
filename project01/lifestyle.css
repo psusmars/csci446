@@ -53,8 +53,8 @@ a:hover {
 }
 
 select {
-    position: relative;
-    left: 1%;
+    position: absolute;
+    left: 265px;
 }
 #how_feel_text {
     position: relative;
