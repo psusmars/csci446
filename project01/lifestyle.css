@@ -5,7 +5,7 @@ body{
 }
 
 #headers {
-    background-color: cccccc;
+    background-color: #cccccc;
 }
 h5 {
 
@@ -26,9 +26,17 @@ h5 {
     border-top-width: 1px;
     margin-left: 38px;
     margin-right: 40px;
-    background-color: fcfcfc;
+    background-color: #fcfcfc;
 }
-a.menuelement:hover { 
+a:visited {
+    color: #ffffff;
+    text-decoration: none;
+}
+a:link {
+    color: #ffffff;
+    text-decoration: none;
+}
+a:hover { 
     color: #0000ff;
 }
 
@@ -38,7 +46,7 @@ select {
 }
 #how_feel_text {
     position: relative;
-    left: 2%;
+    left: 3%;
 }
 
 #menubar ul {
@@ -64,8 +72,12 @@ div.internaltext, h2 {
 }
 #rightpanel {
     float: right;
-    background-color: f0f0ff;
+    background-color: #f0f0ff;
     position: relative;
     top: 9px;
     right: 10px;
+}
+
+#footer {
+    background-color: #F0F0F0;
 }
