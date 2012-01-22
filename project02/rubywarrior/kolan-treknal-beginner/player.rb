@@ -16,7 +16,7 @@ class Player
 		end
 	else	
 		if warrior.feel.empty?
-			check_health_and_heal(warrior, nil)
+			check_health_and_heal(warrior, :forward)
 		else
 			if warrior.feel.captive?
 				warrior.rescue!
