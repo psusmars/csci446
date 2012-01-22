@@ -107,19 +107,24 @@ div.internaltext, h2 {
     padding-left: 6px
 }
 
+#second_line_label {
+    margin-top: 0px;
+}
 #footer {
     background-color: #F0F0F0;
-    padding-right: 5px;
-    padding-left: 5px;
-    padding-bottom: 5px;
-    padding-top: 5px;
+    padding-right: 3px;
+    padding-left: 3px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    text-align: center;
 }
 #footer_text{
     left: 50px;
     font-size: 12px;
 }
 #submitbtn {
-    
     margin-left: 217px;
     font-size: 12px;
+    margin-bottom: 23px;
+    margin-top: 11px;
 }
