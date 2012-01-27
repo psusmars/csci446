@@ -7,7 +7,6 @@ class Player
 	end
 	
 	def play_turn(warrior)
-	test(warrior)
 	if warrior.feel.wall?
 		warrior.pivot!
 	else
