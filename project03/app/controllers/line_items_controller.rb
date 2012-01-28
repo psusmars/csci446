@@ -41,19 +41,22 @@ class LineItemsController < ApplicationController
   # POST /line_items.json
   def create
 		@cart = current_cart
-    product = Product.find(params[:product_id])
 		#Causes a new line_item relationship between the cart object and the product
-		@line_item = @cart.line_items.build(product: product)
-		
+    product = Product.find(params[:product_id])
+    @line_item = @cart.line_items.build(product: product)
 
     respond_to do |format|
+	
       if @line_item.save
-				#reidirect the person to the cart
-        format.html { redirect_to @line_item.cart, notice: 'Line item was successfully created.' }
-        format.json { render json: @line_item, status: :created, location: @line_item }
+        format.html { redirect_to @line_item.cart,
+          notice: 'Line item was successfully created.' }
+		  
+        format.json { render json: @line_item,
+          status: :created, location: @line_item }
       else
         format.html { render action: "new" }
-        format.json { render json: @line_item.errors, status: :unprocessable_entity }
+        format.json { render json: @line_item.errors,
+          status: :unprocessable_entity }
       end
     end
   end
