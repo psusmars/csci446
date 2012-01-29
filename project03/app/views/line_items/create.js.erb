@@ -1,2 +1,6 @@
 //Says to replace the content of the element id=cart with the html
 $('#cart').html("<%=j render @cart %>");
+
+//Animates the background of the element with id=current_item
+$('#current_item').css({'background-color':'#88ff88'}).
+	animate({'background-color':'#114411'}, 1000);
