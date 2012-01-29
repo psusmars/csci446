@@ -43,7 +43,7 @@ class LineItemsController < ApplicationController
 		@cart = current_cart
 		#Causes a new line_item relationship between the cart object and the product
     product = Product.find(params[:product_id])
-    @line_item = @cart.line_items.build(product: product)
+    @line_item = @cart.add_product(product.id)
 
     respond_to do |format|
 	
