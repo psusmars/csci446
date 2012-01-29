@@ -1,3 +1,6 @@
+//Transitions out an empty cart with item that is added
+if ($('#cart tr').length == 1) { $('#cart').show('blind', 1000); }
+
 //Says to replace the content of the element id=cart with the html
 $('#cart').html("<%=j render @cart %>");
 
