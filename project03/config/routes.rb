@@ -21,7 +21,6 @@ Depot::Application.routes.draw do
 		get :who_bought, on: :member
 	end
 	
-  resources :products
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
