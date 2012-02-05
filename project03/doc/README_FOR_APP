@@ -1,2 +1,8 @@
-Use this README file to introduce your application and point to useful places in the API for learning more.
-Run "rake doc:app" to generate API documentation for your models, controllers, helpers, and libraries.
+Paul Susmarski
+2/6/2012
+Professor: Yong Bakos
+
+This is an introductory application made during CSCI 446 (Web applications) at the Colorado School of Mines during Spring 2012.
+This depot application allows users to create orders using the items in the store and see their cart fill up and empty as needed.
+Totals are displayed for users and allows admins to track what orders have been placed and who needs to ship things.
+There is also the ability to add administrator accounts to modify different aspects of the Model.
