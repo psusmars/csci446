@@ -1,5 +1,7 @@
-<h1>Listing articles</h1>
+<h1>Articl.es</h1>
+<h3>...with a name .com hipsters love!</h3>
 
+<h2>All the World's Articles</h2>
 <table>
   <tr>
     <th>Title</th>
@@ -16,9 +18,9 @@
     <td><%= truncate(strip_tags(article.body), length: 42) %></td>
     <td><%= article.created_at.strftime("%A, %b. %d %Y") %></td>
     <td>
-		<%= link_to 'Show', article %>
-		<%= link_to 'Edit', edit_article_path(article) %>
-		<%= link_to 'Destroy', article, confirm: 'Are you sure?', method: :delete %>
+		<%= link_to image_tag('page_view.png'), article, title: "View Article" %>
+		<%= link_to image_tag('page_edit.png'), edit_article_path(article), title: "Edit Article" %>
+		<%= link_to image_tag('page_delete.png'), article, confirm: 'Are you sure?', method: :delete, title: "Delete Article" %>
 	</td>
   </tr>
 <% end %>
