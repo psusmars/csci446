@@ -7,8 +7,6 @@
     <th>Body</th>
     <th>Creation Date</th>
     <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @articles.each do |article| %>
@@ -17,9 +15,11 @@
     <td><%= article.author %></td>
     <td><%= truncate(strip_tags(article.body), length: 42) %></td>
     <td><%= article.created_at.strftime("%A, %b. %d %Y") %></td>
-    <td><%= link_to 'Show', article %></td>
-    <td><%= link_to 'Edit', edit_article_path(article) %></td>
-    <td><%= link_to 'Destroy', article, confirm: 'Are you sure?', method: :delete %></td>
+    <td>
+		<%= link_to 'Show', article %>
+		<%= link_to 'Edit', edit_article_path(article) %>
+		<%= link_to 'Destroy', article, confirm: 'Are you sure?', method: :delete %>
+	</td>
   </tr>
 <% end %>
 </table>
