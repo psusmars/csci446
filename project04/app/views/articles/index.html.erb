@@ -28,5 +28,10 @@
 </table>
 
 <br />
-
-<%= link_to 'New Article', new_article_path %>
+<p>
+	<% if (@articles.size == 1) %>
+		<%= @articles.size %> article.
+	<% else %>
+		<%= @articles.size %> articles.
+	<% end %>
+</p>
