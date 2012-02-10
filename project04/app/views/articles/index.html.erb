@@ -3,13 +3,13 @@
 <h2>All the World's Articles</h2>
 <%= link_to(image_tag('page_add.png'), new_article_path, title: "To 'Article Creation' Screen")%><%= link_to('Create an Article', new_article_path, title: "To 'Article Creation' Screen")%>
 <table id="header_table>
-          <tr class="table_header_row">
-            <th id="title_header">Title</th>
-            <th id="author_header">Author</th>
-            <th id="body_header">Body</th>
-            <th id="date_header">Creation Date</th>
-						<th id="button_header"></th>
-          </tr>
+  <tr class="table_header_row">
+		<th id="title_header">Title</th>
+		<th id="author_header">Author</th>
+		<th id="body_header">Body</th>
+		<th id="date_header">Creation Date</th>
+		<th id="button_header"></th>
+	</tr>
 </table>
 
 <div class="table_div">
@@ -26,7 +26,7 @@
             <td><%= article.created_at.strftime("%A, %b. %d %Y") %></td>
           </tr>
           <% end %>
-				</table>
+        </table>
       </td>
       <td>
         <table>
