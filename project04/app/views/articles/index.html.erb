@@ -2,34 +2,46 @@
 
 <h2>All the World's Articles</h2>
 <%= link_to(image_tag('page_add.png'), new_article_path, title: "To 'Article Creation' Screen")%><%= link_to('Create an Article', new_article_path, title: "To 'Article Creation' Screen")%>
-<table id="header_table>
-  <tr class="table_header_row">
-		<th id="title_header">Title</th>
-		<th id="author_header">Author</th>
-		<th id="body_header">Body</th>
-		<th id="date_header">Creation Date</th>
-		<th id="button_header"></th>
-	</tr>
+<table id="header_encapsulating_table" class="encapsulating_table">
+  <tr>
+    <td>
+      <table id="header_table">
+        <tr class="table_header_row">
+          <th id="title_header" class="title_column">Title</th>
+          <th id="author_header" class="author_column">Author</th>
+          <th id="body_header" class="body_column">Body</th>
+          <th id="date_header" class="date_column">Creation Date</th>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table>
+        <tr class="table_header_row">
+          <th id="button_header"></th>
+        </tr>
+      </table>
+    </td>
+  </tr>
 </table>
 
 <div class="table_div">
-  <table id="encapsulating_table">
+  <table class="encapsulating_table">
     <tr>
       <td>
         <table id="article_table">
 
           <% @articles.each do |article| %>
           <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
-            <td><%= article.title %></td>
-            <td><%= article.author %></td>
-            <td><%= truncate(strip_tags(article.body), length: 42) %></td>
-            <td><%= article.created_at.strftime("%A, %b. %d %Y") %></td>
+            <td class="title_column"><%= article.title %></td>
+            <td class="author_column"><%= article.author %></td>
+            <td class="body_column"><%= truncate(strip_tags(article.body), length: 42) %></td>
+            <td class="date_column"><%= article.created_at.strftime("%A, %b. %d %Y") %></td>
           </tr>
           <% end %>
         </table>
       </td>
       <td>
-        <table>
+        <table id="button_table">
           <% @articles.each do |article| %>
           <tr class="interior_row">
             <td class="button_column">
@@ -51,4 +63,5 @@
   <% else %>
   <%= @articles.size %> articles.
   <% end %>
+
 </p>

@@ -1,59 +1,66 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!-- Paul Susmarski -->
+<h3>...with a name .com hipsters love!</h3>
 
-<html>
-    <head>
-        <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
-        <title>Life Figure-Outer Application</title>
-        <link rel="stylesheet" type="text/css" href="lifestyle.css"/>
-        <script type="text/javascript" src="indexscript.js"></script>
-    </head>
-    <body>
-        <div id="main">
-            <div id="headers">
-                <h1>The Magic Life Figure-Outer!</h1>
-                <h6>Figuring out your life for you, so you don't have to</h6>
-            </div>
-            <div id="menubar">
-                <ul>
-                    <li><a class="menuelement" href="#" title="There's nothing better than">Home</a></li>
-                    <li><a class="menuelement" href="#" title="You definitely don't share these">Interests</a></li>
-                    <li><a class="menuelement" href="#" title="It's bad for your">Health</a></li>
-                    <li><a class="menuelement" href="#" title="Don't we wish we were all">Academic</a></li>
-                    <li><a class="menuelement" href="#" title="We're all this... Right?">Professional</a></li>
-                    <li><a class="menuelement" href="#" title="Nothing beats">Fun</a></li>
-                    <li><a class="menuelement" href="#" title="Everyone is just a little">Evil</a></li>
-                </ul>
-            </div>
-            <div id="rightpanel">
-                <h4>Current Progress in Life</h4>
-                <h5>Mediocre. You really should enjoy life more.</h5>
-            </div>
-            <div id="userinteraction">
-                <h2>Lorem Ipsum Dolor Sit Amet.</h2>
-                <form name="indexform" onsubmit="return ValidateOnSubmit()">
-                    <div class="internaltext">
-                        <label for="how_feel_text">How do you feel today?</label>
-                        <input type="text" id="how_feel_text" name="how_feel_text"/>
-                    </div>
-                    <div class="internaltext">
-                        <label for="feelings_selection">How would you like to feel?</label>
-                        <select multiple="true" size ="4" name="feelings_selection">
-                            <option>Comfortably numb</option>
-                            <option>Grumpy as poop, you jerk</option>
-                            <option>Happy like I'm on controlled substances</option>
-                            <option>Normal. Absolutely Normal.</option>
-                        </select>
-                        <p id="second_line_label">(choose all that apply)</p>
-                    </div>
-                    <br/>
-                    <input type="submit" id="submitbtn" value="Feel me!"/>
-                </form>
-            </div>
-            <div id="footer">
-                <p id="footer_text">&copy; 2011 Borg-LIke Monstrosity of Mind Control, Inc. All rights reserved.</p>
-            </div>
-        </div>
-    </body>
-</html>
+<h2>All the World's Articles</h2>
+<%= link_to(image_tag('page_add.png'), new_article_path, title: "To 'Article Creation' Screen")%><%= link_to('Create an Article', new_article_path, title: "To 'Article Creation' Screen")%>
+<table class="encapsulating_table">
+  <tr>
+    <td>
+      <table id="header_table">
+        <tr class="table_header_row">
+          <th id="title_header">Title</th>
+          <th id="author_header">Author</th>
+          <th id="body_header">Body</th>
+          <th id="date_header">Creation Date</th>
+        </tr>
+      </table>
+    </td>
+    <td>
+      <table>
+        <tr class="table_header_row">
+          <th id="button_header"></th>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+
+<div class="table_div">
+  <table class="encapsulating_table">
+    <tr>
+      <td>
+        <table id="article_table">
+
+          <% @articles.each do |article| %>
+          <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+            <td><%= article.title %></td>
+            <td><%= article.author %></td>
+            <td><%= truncate(strip_tags(article.body), length: 42) %></td>
+            <td><%= article.created_at.strftime("%A, %b. %d %Y") %></td>
+          </tr>
+          <% end %>
+        </table>
+      </td>
+      <td>
+        <table>
+          <% @articles.each do |article| %>
+          <tr class="interior_row">
+            <td class="button_column">
+              <%= link_to image_tag('page_view.png'), article, title: "View Article" %>
+              <%= link_to image_tag('page_edit.png'), edit_article_path(article), title: "Edit Article" %>
+              <%= link_to image_tag('page_delete.png'), article, confirm: 'Are you sure?', method: :delete, title: "Delete Article" %>
+            </td>
+          </tr>
+          <% end %>
+        </table>
+      </td>
+    </tr>
+  </table>
+</div>
+<br />
+<p>
+  <% if (@articles.size == 1) %>
+  <%= @articles.size %> article.
+  <% else %>
+  <%= @articles.size %> articles.
+  <% end %>
+</p>
