@@ -2,7 +2,7 @@
 
 <h2>All the World's Articles</h2>
 <%= link_to(image_tag('page_add.png'), new_article_path, title: "To 'Article Creation' Screen")%><%= link_to('Create an Article', new_article_path, title: "To 'Article Creation' Screen")%>
-<table>
+<table class="article_list">
   <tr>
     <th>Title</th>
     <th>Author</th>
@@ -10,20 +10,21 @@
     <th>Creation Date</th>
     <th></th>
   </tr>
-
-<% @articles.each do |article| %>
-  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
-    <td><%= article.title %></td>
-    <td><%= article.author %></td>
-    <td><%= truncate(strip_tags(article.body), length: 42) %></td>
-    <td><%= article.created_at.strftime("%A, %b. %d %Y") %></td>
-    <td>
-		<%= link_to image_tag('page_view.png'), article, title: "View Article" %>
-		<%= link_to image_tag('page_edit.png'), edit_article_path(article), title: "Edit Article" %>
-		<%= link_to image_tag('page_delete.png'), article, confirm: 'Are you sure?', method: :delete, title: "Delete Article" %>
-	</td>
-  </tr>
-<% end %>
+	<div id="index_table">
+		<% @articles.each do |article| %>
+			<tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+				<td><%= article.title %></td>
+				<td><%= article.author %></td>
+				<td><%= truncate(strip_tags(article.body), length: 42) %></td>
+				<td><%= article.created_at.strftime("%A, %b. %d %Y") %></td>
+				<td>
+				<%= link_to image_tag('page_view.png'), article, title: "View Article" %>
+				<%= link_to image_tag('page_edit.png'), edit_article_path(article), title: "Edit Article" %>
+				<%= link_to image_tag('page_delete.png'), article, confirm: 'Are you sure?', method: :delete, title: "Delete Article" %>
+			</td>
+			</tr>
+		<% end %>
+	</div>
 </table>
 
 <br />

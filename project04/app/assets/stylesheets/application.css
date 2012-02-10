@@ -5,3 +5,18 @@
  *= require_self
  *= require_tree . 
 */
+div#index_table {
+	overflow: auto;
+	height: 50%;
+	width: 90%;
+}
+tr.list_line_odd{
+	background: #EEEEEE;
+}
+th {
+	background: #CCCCCC;
+}
+table {
+	border: solid black 2px;
+	margin: 0px;
+}
