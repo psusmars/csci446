@@ -25,13 +25,24 @@ tr.list_line_odd{
 
 th#title_header {
 	background: #CCCCCC;
-	width: 96px
+	/*width: 15.5%*/
+	width: 96px;
 }
 th#author_header {
 	background: #CCCCCC;
 	width: 108px;
 }
-
+th#body_header {
+	background: #CCCCCC;
+	width: 310px;
+}
+th#date_header {
+	background: #CCCCCC;
+	width: 177px;
+}
+th#button_header {
+	width: 76px;
+}
 
 table#encapsulating_table, table#article_table{
 	width: 100%
