@@ -5,29 +5,49 @@
  *= require_self
  *= require_tree . 
 */
-div.table_div {
+div.table_div{
 	overflow: auto;
 	height: 300px;
-	width: 90%;
+	width: 800px;
+	margin-top: 0px;
+}
+table#header_table {
+	width: 800px;
+	margin-bottom: 0px;
+	border-left: solid black 2px;
+	border-right: solid black 2px;
 }
 
 tr.list_line_odd{
 	background: #EEEEEE;
 }
-tr#article_table_header {
+
+
+th#title_header {
 	background: #CCCCCC;
+	width: 96px
+}
+th#author_header {
+	background: #CCCCCC;
+	width: 108px;
+}
+
+
+table#encapsulating_table, table#article_table{
+	width: 100%
 }
 
 tr.interior_row, tr.list_line_odd, tr.list_line_even {
 	height: 25px
 }
 
-tr.interior_row_header {
+tr.table_header_row {
 	height: 20px
 }
 
 table#article_table {
-	border: solid black 2px;
+	border-left: solid black 2px;
+	border-right: solid black 2px;
 	margin: 0px;
 }
 
