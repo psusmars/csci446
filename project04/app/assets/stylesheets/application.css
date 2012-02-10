@@ -5,18 +5,34 @@
  *= require_self
  *= require_tree . 
 */
-div#index_table {
+div.table_div {
 	overflow: auto;
-	height: 50%;
+	height: 300px;
 	width: 90%;
 }
+
 tr.list_line_odd{
 	background: #EEEEEE;
 }
-th {
+tr#article_table_header {
 	background: #CCCCCC;
 }
-table {
+
+tr.interior_row, tr.list_line_odd, tr.list_line_even {
+	height: 25px
+}
+
+tr.interior_row_header {
+	height: 20px
+}
+
+table#article_table {
 	border: solid black 2px;
 	margin: 0px;
+}
+
+.button_column{
+	background: white;
+	border-top: white;
+	border-bottom: white;
 }
