@@ -4,8 +4,10 @@ one:
   title: MyString
   author: MyString
   body: MyText
+  edits: 0
 
 two:
   title: MyString
   author: MyString
   body: MyText
+  edits: 0
