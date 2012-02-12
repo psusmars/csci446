@@ -25,7 +25,9 @@ class ArticlesController < ApplicationController
   # GET /articles/new.json
   def new
     @article = Article.new
-
+		@text_for_submit_btn = "Create!"
+		
+		
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @article }
@@ -35,6 +37,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1/edit
   def edit
     @article = Article.find(params[:id])
+		@text_for_submit_btn = "Save Changes"
   end
 
   # POST /articles
