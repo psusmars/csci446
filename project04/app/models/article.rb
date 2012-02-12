@@ -1,3 +1,10 @@
 class Article < ActiveRecord::Base
 	validates :title, :author, :body, presence: true
+	validate :name_cant_contain_pat
+	
+	def name_cant_contain_pat
+		if !author.blank? and !/\b[P|p]at/.match(author)[-1].empty?
+			errors.add(:author, "can't contain the name/word \"Pat\"")
+		end
+	end
 end
