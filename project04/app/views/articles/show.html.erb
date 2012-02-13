@@ -1,20 +1,22 @@
 <p id="notice"><%= notice %></p>
 
+<ul class="horizontal_list">
+	<li></li>
+	<li><%= link_to image_tag('page_edit.png'), edit_article_path(@article), title: "Edit Article" %><%= link_to 'edit', edit_article_path(@article), title: "Edit Article" %></li>
+	<li><%= link_to image_tag('page_delete.png'), @article, confirm: 'Are you sure?', method: :delete, title: "Delete Article" %><%= link_to 'delete', @article, confirm: 'Are you sure?', method: :delete, title: "Delete Article" %></li>
+	<li></li>
+</ul>
+
 <p>
-  <b>Title:</b>
-  <%= @article.title %>
+	<h2><%= @article.title %></h2>
 </p>
 
 <p>
-  <b>Author:</b>
-  <%= @article.author %>
+  by <%= @article.author %>. <%= @article.edits %> <%= @article.edits == 1? "edit" : "edits" %> since <%= @article.created_at.strftime("%A, %b. %d %Y") %>.
 </p>
 
+<br/>
+
 <p>
-  <b>Body:</b>
   <%= @article.body %>
 </p>
-
-
-<%= link_to 'Edit', edit_article_path(@article) %> |
-<%= link_to 'Back', articles_path %>
