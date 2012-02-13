@@ -94,3 +94,24 @@ table#article_table {
 	border-top: white;
 	border-bottom: white;
 }
+
+.horizontal_list ul{
+    margin: 0; padding: 0; }
+ 
+.horizontal_list ul li{
+    display: inline;}
+ 
+.horizontal_list ul li a, .horizontal_list ul li{
+    float: left; 
+	text-decoration: none;
+    padding: 2px 2px;
+}
+
+ .horizontal_list ul li{
+	margin-right: 200px;
+}
+ 
+.horizontal_list ul li a:hover, .horizontal_list ul li .current{
+    background-color:white;
+	color:black;}
+
