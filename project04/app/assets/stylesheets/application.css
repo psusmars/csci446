@@ -107,10 +107,13 @@ table#article_table {
     padding: 2px 2px;
 }
 
- .horizontal_list ul li{
+ .horizontal_list ul li h2{
 	margin-right: 200px;
 }
  
+.horizontal_list ul li#create_new_article_button{
+	padding-top: 13pt;
+}
 .horizontal_list ul li a:hover, .horizontal_list ul li .current{
     background-color:white;
 	color:black;}
