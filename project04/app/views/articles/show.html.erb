@@ -3,9 +3,18 @@
 <div class="horizontal_list">
 	<ul>
 		<li></li>
-		<li><%= link_to image_tag('page_edit.png'), edit_article_path(@article), title: "Edit Article" %><%= link_to 'edit', edit_article_path(@article), title: "Edit Article" %></li>
-		<li><%= link_to image_tag('page_delete.png'), @article, confirm: 'Are you sure?', method: :delete, title: "Delete Article" %><%= link_to 'delete', @article, confirm: 'Are you sure?', method: :delete, title: "Delete Article" %></li>
-		<li></li>
+		<li>
+			<%= link_to image_tag('page_edit.png'), edit_article_path(@article), title: "Edit Article" %>
+			<%= link_to 'edit', edit_article_path(@article), title: "Edit Article" %>
+		</li>
+		<li>
+			<%= link_to image_tag('page_delete.png'), @article, confirm: 'Are you sure?', method: :delete, title: "Delete Article" %>
+			<%= link_to 'delete', @article, confirm: 'Are you sure?', method: :delete, title: "Delete Article" %>
+		</li>
+		<li>
+			<%= mail_to(nil, image_tag('email.png'), :subject => @article.title, :body => article_url) %>
+			<%= mail_to(nil, "email", :subject => @article.title, :body => article_url) %>
+		</li>
 	</ul>
 </div>
 <br/>

@@ -93,6 +93,7 @@ table#article_table {
 	background: white;
 	border-top: white;
 	border-bottom: white;
+	margin-bottom: 2px;
 }
 
 .horizontal_list ul{
