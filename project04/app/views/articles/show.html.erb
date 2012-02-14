@@ -2,7 +2,10 @@
 
 <div class="horizontal_list">
 	<ul>
-		<li></li>
+		<li>
+			<%= link_to image_tag('arrow_left.png'), articles_path, title: "Show all Articles" %>
+			<%= link_to 'list all articles', articles_path %>
+		</li>
 		<li>
 			<%= link_to image_tag('page_edit.png'), edit_article_path(@article), title: "Edit Article" %>
 			<%= link_to 'edit', edit_article_path(@article), title: "Edit Article" %>
