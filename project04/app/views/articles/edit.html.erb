@@ -1,6 +1,12 @@
+<div class="horizontal_list">
+	<ul>
+		<li>
+			<%= link_to image_tag("arrow_left.png"), :back, title: "Go back to previous screen." %>
+			<%= link_to "back", :back, title: "Go back to previous screen." %>
+		</li>
+	</ul>
+</div>
+<br />
 <h2>Editing &quot<%=@article.title%>&quot</h2>
-
+<br/>
 <%= render 'form' %>
-
-<%= link_to 'Show', @article %> |
-<%= link_to 'Back', articles_path %>
