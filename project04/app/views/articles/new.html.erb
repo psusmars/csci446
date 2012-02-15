@@ -1,5 +1,13 @@
-<h1>New article</h1>
+
+<div class="horizontal_list">
+	<ul>
+		<li>
+			<%= link_to image_tag("arrow_left.png"), articles_path, title: "Show all Articles" %>
+			<%= link_to "list all articles", articles_path %>
+		</li>
+	</ul>
+</div>
+<br />
+<h2>Creating a New Article</h2>
 
 <%= render 'form' %>
-
-<%= link_to 'Back', articles_path %>
