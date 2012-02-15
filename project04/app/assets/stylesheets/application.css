@@ -122,7 +122,3 @@ table#article_table {
     background-color:white;
 	color:black;
 }
-
-table#form_table tr td {
-	valign: top;
-}
