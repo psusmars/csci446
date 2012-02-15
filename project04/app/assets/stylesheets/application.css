@@ -123,3 +123,6 @@ table#article_table {
 	color:black;
 }
 
+table#form_table tr td {
+	valign: top;
+}

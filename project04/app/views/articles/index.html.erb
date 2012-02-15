@@ -64,10 +64,5 @@
 </div>
 <br />
 <p>
-  <% if (@articles.size == 1) %>
-  <%= @articles.size %> article.
-  <% else %>
-  <%= @articles.size %> articles.
-  <% end %>
-
+  <%= pluralize(@articles.size, "article")%>.
 </p>

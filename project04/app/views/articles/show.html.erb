@@ -26,7 +26,7 @@
 </p>
 
 <p>
-  by <%= @article.author %>. <%= @article.edits %> <%= @article.edits == 1? "edit" : "edits" %> since <%= @article.created_at.strftime("%A, %b. %d %Y") %>.
+  by <%= @article.author %>. <%= pluralize(@article.edits, "edit") %> since <%= @article.created_at.strftime("%A, %b. %d %Y") %>.
 </p>
 
 <br/>
