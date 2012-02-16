@@ -22,6 +22,9 @@ tr.list_line_odd{
 	background: #EEEEEE;
 }
 
+div.header {
+	margin-left: 30%
+}
 
 table#header_encapsulating_table {
 	margin-bottom: -6px;
