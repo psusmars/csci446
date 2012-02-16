@@ -126,6 +126,11 @@ table#article_table {
 	color:black;
 }
 
-td.text_area_label {
-	valign: top;
+table#form_table tr td {
+	padding-bottom: 15px;
+}
+td.field_label {
+	vertical-align: top;
+	text-align: right;
+	padding-right: 18px;
 }
