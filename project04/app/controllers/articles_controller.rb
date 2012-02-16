@@ -37,6 +37,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1/edit
   def edit
     @article = Article.find(params[:id])
+		session[:last_article_page] = request.env['HTTP_REFERER'] || articles_url
 		@text_for_submit_btn = "Save Changes"
   end
 
@@ -64,7 +65,7 @@ class ArticlesController < ApplicationController
 		
     respond_to do |format|
       if @article.update_attributes(params[:article])
-        format.html { redirect_to @article, notice: 'Article was successfully updated.' }
+        format.html { redirect_to session[:last_article_page] || articles_url, notice: 'Article was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
