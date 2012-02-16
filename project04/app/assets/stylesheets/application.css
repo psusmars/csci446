@@ -125,3 +125,7 @@ table#article_table {
     background-color:white;
 	color:black;
 }
+
+td.text_area_label {
+	valign: top;
+}
