@@ -1,0 +1,136 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require_tree . 
+*/
+div.table_div{
+	overflow: auto;
+	height: 270px;
+	width: 800px;
+	margin-top: 0px;
+}
+table#header_table {
+	margin-bottom: -3px;
+	border-left: solid black 2px;
+	border-top: solid black 2px;
+	border-right: solid black 2px;
+}
+
+tr.list_line_odd{
+	background: #EEEEEE;
+}
+
+div.header {
+	margin-left: 30%
+}
+
+table#header_encapsulating_table {
+	margin-bottom: -6px;
+	/*683px*/
+}
+table#article_table, table#header_table {
+	width: 708px;
+}
+
+table#article_table, table#header_table{
+	border-spacing: 0px;
+}
+
+.title_column {
+	width: 13.4%;
+}
+.author_column {
+	width: 15.71%;
+	border-right: solid black 2px;
+	border-left: solid black 2px;
+}
+.body_column {
+	width: 45.24%;
+	border-right: solid black 2px;
+}
+.date_column {
+	width: 25.33%;
+}
+
+th#title_header {
+	background: #CCCCCC;
+}
+th#author_header {
+	background: #CCCCCC;
+}
+th#body_header {
+	background: #CCCCCC;
+}
+th#date_header {
+	background: #CCCCCC;
+}
+th#button_header {
+	width: 76px;
+}
+
+table.encapsulating_table{
+	width: 100%
+}
+
+tr.interior_row {
+	height: 25px
+}
+tr.list_line_odd, tr.list_line_even {
+	height: 27px
+}
+
+tr.table_header_row {
+	height: 20px
+}
+
+table#article_table {
+	border-left: solid black 2px;
+	border-right: solid black 2px;
+	border-bottom: solid black 2px;
+	margin: 0px;
+}
+
+.button_column{
+	background: white;
+	border-top: white;
+	border-bottom: white;
+	margin-bottom: 2px;
+}
+
+.horizontal_list ul{
+    margin: 0; 
+	padding: 0; 
+}
+ 
+.horizontal_list ul li{
+    display: inline;
+}
+ 
+.horizontal_list ul li a, .horizontal_list ul li{
+    float: left; 
+	text-decoration: none;
+    padding: 2px 2px;
+}
+
+ .horizontal_list ul li h2{
+	margin-right: 200px;
+}
+ 
+.horizontal_list ul li#create_new_article_button{
+	padding-top: 13pt;
+}
+.horizontal_list ul li a:hover, .horizontal_list ul li .current{
+    background-color:white;
+	color:black;
+}
+
+table#form_table tr td {
+	padding-bottom: 15px;
+}
+td.field_label {
+	vertical-align: top;
+	text-align: right;
+	padding-right: 18px;
+}

@@ -1,0 +1,39 @@
+<% content_for :header do %>
+	<h3>... what's &quot;Articl&quot; in Spanish anyway?</h3>
+<% end %>
+<p id="notice"><%= notice %></p>
+
+<div class="horizontal_list">
+	<ul>
+		<li>
+			<%= link_to image_tag('arrow_left.png'), articles_path, title: "Show all Articles" %>
+			<%= link_to 'list all articles', articles_path, title: "Show all Articles" %>
+		</li>
+		<li>
+			<%= link_to image_tag('page_edit.png'), edit_article_path(@article), title: "Edit Article" %>
+			<%= link_to 'edit', edit_article_path(@article), title: "Edit Article" %>
+		</li>
+		<li>
+			<%= link_to image_tag('page_delete.png'), @article, confirm: 'Are you sure?', method: :delete, title: "Delete Article" %>
+			<%= link_to 'delete', @article, confirm: 'Are you sure?', method: :delete, title: "Delete Article" %>
+		</li>
+		<li>
+			<%= mail_to(nil, image_tag('email.png'), :subject => @article.title, :body => article_url) %>
+			<%= mail_to(nil, "email", :subject => @article.title, :body => article_url) %>
+		</li>
+	</ul>
+</div>
+<br/>
+<p>
+	<h2><%= @article.title %></h2>
+</p>
+
+<p>
+  by <%= @article.author %>. <%= pluralize(@article.edits, "edit") %> since <%= @article.created_at.strftime("%A, %b. %d %Y") %>.
+</p>
+
+<br/>
+
+<p>
+  <%= sanitize(@article.body) %>
+</p>

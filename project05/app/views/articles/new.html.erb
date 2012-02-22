@@ -1,0 +1,15 @@
+<% content_for :header do %>
+	<h3>... not just for the country of Spain</h3>
+<% end %>
+<div class="horizontal_list">
+	<ul>
+		<li>
+			<%= link_to image_tag("arrow_left.png"), articles_path, title: "Show all Articles" %>
+			<%= link_to "list all articles", articles_path, title: "Show all Articles" %>
+		</li>
+	</ul>
+</div>
+<br />
+<h2>Creating a New Article</h2>
+<br />
+<%= render 'form' %>
