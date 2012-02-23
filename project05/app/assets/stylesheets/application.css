@@ -26,6 +26,10 @@ div.header {
 	margin-left: 30%
 }
 
+div.pagination {
+	margin-left: 354px;
+}
+
 table#header_encapsulating_table {
 	margin-bottom: -6px;
 	/*683px*/

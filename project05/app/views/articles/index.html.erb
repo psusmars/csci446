@@ -8,12 +8,13 @@
 <div class="horizontal_list">
 	<ul>
 		<li><h2>All the World's Articles</h2></li>
-		<li id="create_new_article_button"><%= link_to(image_tag('page_add.png'), new_article_path, title: "To 'Article Creation' Screen")%><%= link_to('Create an Article', new_article_path, title: "To 'Article Creation' Screen")%></li>
+		<li id="create_new_article_button"><%= link_to(image_tag("page_add.png"), new_article_path, title: "To 'Article Creation' Screen")%><%= link_to("Create an Article", new_article_path, title: "To 'Article Creation' Screen")%></li>
 	</ul>
 </div>
+<br /> <br />
+<br /> <br />
+<%= will_paginate @articles %>
 <br />
-<br />
-<p class="pages"><%= will_paginate @articles %></p>
 <table id="header_encapsulating_table" class="encapsulating_table">
   <tr>
     <td>
@@ -43,7 +44,7 @@
         <table id="article_table">
 
           <% @articles.each do |article| %>
-          <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+          <tr class="<%= cycle("list_line_odd", "list_line_even") %>">
             <td class="title_column"><%= article.title %></td>
             <td class="author_column"><%= article.author %></td>
             <td class="body_column"><%= truncate(strip_tags(article.body), length: 42) %></td>
@@ -57,9 +58,9 @@
           <% @articles.each do |article| %>
           <tr class="interior_row">
             <td class="button_column">
-              <%= link_to image_tag('page_view.png'), article, title: "View Article" %>
-              <%= link_to image_tag('page_edit.png'), edit_article_path(article), title: "Edit Article" %>
-              <%= link_to image_tag('page_delete.png'), article, confirm: 'Are you sure?', method: :delete, title: "Delete Article" %>
+              <%= link_to image_tag("page_view.png"), article, title: "View Article" %>
+              <%= link_to image_tag("page_edit.png"), edit_article_path(article), title: "Edit Article" %>
+              <%= link_to image_tag("page_delete.png"), article, confirm: "Are you sure?", method: :delete, title: "Delete Article" %>
             </td>
           </tr>
           <% end %>
@@ -72,4 +73,4 @@
 <p>
   <%= pluralize(@articles.size, "article")%>.
 </p>
-<p class="pages"><%= will_paginate @articles %></p>
+<%= will_paginate @articles %>
