@@ -6,7 +6,7 @@ class Article < ActiveRecord::Base
 	
 	private 
 	def name_cant_contain_pat
-		if !author.blank? and /\b[P|p][A|a][T|t]/.match(author) != nil
+		if !author.blank? and /[P|p][A|a][T|t]/.match(author) != nil
 			errors.add(:author, "can't contain the name/word \"Pat\"")
 		end
 	end

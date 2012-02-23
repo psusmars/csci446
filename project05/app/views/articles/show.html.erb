@@ -35,5 +35,5 @@
 <br/>
 
 <p>
-  <%= sanitize(@article.body) %>
+  <%= simple_format(sanitize(@article.body)) %>
 </p>
