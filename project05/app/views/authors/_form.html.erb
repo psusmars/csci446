@@ -10,8 +10,25 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+	<table id="form_table">
+	<table id="form_table">
+		<tr>
+			<div class="field">
+				<td class="field_label"><%= f.label :photo %></td>
+				<td><%= form.file_field :photo %></td>
+			</div>
+		</tr>
+		<tr>
+			<div class="field">
+				<td class="field_label"><%= f.label :name %></td>
+				<td><%= f.text_field :name %></td>
+			</div>
+		</tr>
+		<tr>
+			<td></td>
+			<div class="actions">
+				<td><%= f.submit @text_for_submit_btn %></td>
+			</div>
+		</tr>
+	</table>
 <% end %>
