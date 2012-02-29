@@ -1,6 +1,6 @@
 class Article < ActiveRecord::Base
 	validates :title, :author, :body, presence: true
-	
+	belongs_to :author
 	before_save :increment_edit_count
 	
 	def increment_edit_count
