@@ -46,7 +46,7 @@
           <% @articles.each do |article| %>
           <tr class="<%= cycle("list_line_odd", "list_line_even") %>">
             <td class="title_column"><%= article.title %></td>
-            <td class="author_column"><%= article.author %></td>
+            <td class="author_column"><%= Author.find(article.author_id).name %></td>
             <td class="body_column"><%= truncate(strip_tags(article.body), length: 42) %></td>
             <td class="date_column"><%= article.created_at.strftime("%A, %b. %d %Y") %></td>
           </tr>

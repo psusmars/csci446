@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class AuthorTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+	test "do not allow names 'Pat'" do
+		author = Author.new(name: "Blah Title")
+		assert !author.save
+	end
 end
