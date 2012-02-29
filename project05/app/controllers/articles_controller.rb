@@ -14,7 +14,8 @@ class ArticlesController < ApplicationController
   # GET /articles/1.json
   def show
     @article = Article.find(params[:id])
-
+		@author_name = Author.find(@article[:author_id]).name
+		
     respond_to do |format|
       format.html # show.html.haml
       format.json { render json: @article }
@@ -45,7 +46,8 @@ class ArticlesController < ApplicationController
   # POST /articles.json
   def create
     @article = Article.new(params[:article])
-
+		@article.author_id = params[:author][:author_id]
+		
     respond_to do |format|
       if @article.save
         format.html { redirect_to @article, notice: 'Article was successfully created.' }
@@ -61,6 +63,7 @@ class ArticlesController < ApplicationController
   # PUT /articles/1.json
   def update
     @article = Article.find(params[:id])
+		@article.author_id = params[:author][:author_id]
 		
     respond_to do |format|
       if @article.update_attributes(params[:article])
