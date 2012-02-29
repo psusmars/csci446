@@ -34,6 +34,8 @@ end
 
 gem 'will_paginate', '~>3.0'
 
-gem "erb2haml"
+gem "erb2haml", :group => :development
 
 gem "paperclip", "~> 2.0"
+
+gem "haml"

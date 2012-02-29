@@ -1,0 +1,54 @@
+- content_for :header do
+  \...with a name .com hipsters love!
+%br/
+%p#notice= notice
+.horizontal_list
+  %ul
+    %li
+      %h2 All the World's Articles
+    %li#create_new_article_button
+      = link_to(image_tag("page_add.png"), new_article_path, title: "To 'Article Creation' Screen")
+      = link_to("Create an Article", new_article_path, title: "To 'Article Creation' Screen")
+%br/
+%br/
+%br/
+%br/
+= will_paginate @articles
+%br/
+%table#header_encapsulating_table.encapsulating_table
+  %tr
+    %td
+      %table#header_table
+        %tr.table_header_row
+          %th#title_header.title_column Title
+          %th#author_header.author_column Author
+          %th#body_header.body_column Body
+          %th#date_header.date_column Creation Date
+    %td
+      %table
+        %tr.table_header_row
+          %th#button_header
+.table_div
+  %table.encapsulating_table
+    %tr
+      %td
+        %table#article_table
+          - @articles.each do |article|
+            %tr{:class => cycle("list_line_odd", "list_line_even")}
+              %td.title_column= article.title
+              %td.author_column= Author.find(article.author_id).name
+              %td.body_column= truncate(strip_tags(article.body), length: 42)
+              %td.date_column= article.created_at.strftime("%A, %b. %d %Y")
+      %td
+        %table#button_table
+          - @articles.each do |article|
+            %tr.interior_row
+              %td.button_column
+                = link_to image_tag("page_view.png"), article, title: "View Article"
+                = link_to image_tag("page_edit.png"), edit_article_path(article), title: "Edit Article"
+                = link_to image_tag("page_delete.png"), article, confirm: "Are you sure?", method: :delete, title: "Delete Article"
+%br/
+%p
+  = pluralize(@articles.size, "article")
+  \.
+= will_paginate @articles

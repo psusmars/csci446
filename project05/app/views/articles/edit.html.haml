@@ -1,0 +1,12 @@
+- content_for :header do
+  \... my cousin works for Bit.ly
+.horizontal_list
+  %ul
+    %li
+      = link_to image_tag("arrow_left.png"), :back, title: "Go back to previous screen."
+      = link_to "back", :back, title: "Go back to previous screen."
+%br/
+%h2
+  Editing "#{@article.title}"
+%br/
+= render 'form'

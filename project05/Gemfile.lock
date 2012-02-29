@@ -129,6 +129,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 3.1.0)
   erb2haml
+  haml
   jquery-rails
   paperclip (~> 2.0)
   rails (= 3.1.0)

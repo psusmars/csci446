@@ -1,0 +1,22 @@
+= form_for(@author) do |f|
+  - if @author.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@author.errors.count, "error")
+        prohibited this author from being saved:
+      %ul
+        - @author.errors.full_messages.each do |msg|
+          %li= msg
+  %table#form_table
+    %tr
+      .field
+        %td.field_label= f.label :photo
+        %td= f.file_field :photo
+    %tr
+      .field
+        %td.field_label= f.label :name
+        %td= f.text_field :name
+    %tr
+      %td
+      .actions
+        %td= f.submit @text_for_submit_btn

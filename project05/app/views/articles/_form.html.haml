@@ -1,0 +1,26 @@
+= form_for(@article) do |f|
+  - if @article.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@article.errors.count, "error")
+        prohibited this article from being saved:
+      %ul
+        - @article.errors.full_messages.each do |msg|
+          %li= msg
+  %table#form_table
+    %tr
+      .field
+        %td.field_label= f.label :title
+        %td= f.text_field :title
+    %tr
+      .field
+        %td.field_label= f.label :author
+        %td= f.text_field :author
+    %tr
+      .field
+        %td.field_label= f.label :body
+        %td= f.text_area :body
+    %tr
+      %td
+      .actions
+        %td= f.submit @text_for_submit_btn
