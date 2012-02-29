@@ -1,4 +1,21 @@
-%p#notice= notice
+- content_for :header do
+  \...godly does not define Arthur
+- if notice
+  %p#notice= notice
+%div.image
+  = image_tag @author.photo.url(:thumb)
+%h2
+  = @author.name
+
 = link_to 'Edit', edit_author_path(@author)
 |
 \#{link_to 'Back', authors_path}
+
+.article_list
+  %h3
+    Articles by
+    \#(@author.name):
+  %ul
+    - Article.find_all_by_author_id(@author.id).each do |arti|
+      %li
+        = link_to arti[:title], article_path(arti)

@@ -14,8 +14,8 @@
         %td= f.text_field :title
     %tr
       .field
-        %td.field_label= f.label :author
-        %td= f.text_field :author
+        %td.field_lable= f.label :author
+        %td= collection_select(:author, :author_id, Author.all, :id, :name, :prompt => true)
     %tr
       .field
         %td.field_label= f.label :body
