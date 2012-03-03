@@ -7,10 +7,6 @@
 %h2
   = @author.name
 
-= link_to 'Edit', edit_author_path(@author)
-|
-\#{link_to 'Back', authors_path}
-
 .article_list
   %h3
     Articles by
@@ -19,3 +15,7 @@
     - Article.find_all_by_author_id(@author.id).each do |arti|
       %li
         = link_to arti[:title], article_path(arti)
+        
+= link_to 'Edit', edit_author_path(@author)
+|
+\#{link_to 'Back', authors_path}
