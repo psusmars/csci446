@@ -7,21 +7,21 @@
     %li
       %h2 All the World's Authors
     %li#create_new_article_button
-      = link_to(image_tag("page_add.png"), new_author_path, title: "To 'Author Creation' Screen")
-      = link_to("Create an Article", new_author_path, title: "To 'Author Creation' Screen")
+      = link_to(image_tag("page_add.png"), new_author_path, title: "Add a new Author")
+      = link_to("Add new Author", new_author_path, title: "Add a new Author")
 %br/
 %br/
 %br/
 %br/
-%table
+%table{:cellspacing => "2"}
   %tr
+    %th Name
     %th
     %th
     %th
   - @authors.each do |author|
-    %tr
-      %td= link_to 'Show', author
-      %td= link_to 'Edit', edit_author_path(author)
-      %td= link_to 'Destroy', author, confirm: 'Are you sure?', method: :delete
-%br/
-= link_to 'New Author', new_author_path
+    %tr{:class => cycle("list_line_odd", "list_line_even")}
+      %td= author.name
+      %td= link_to image_tag("page_view.png"), author, title: "View Author"
+      %td= link_to image_tag("page_edit.png"), edit_author_path(author), title: "Edit Author"
+      %td= link_to image_tag("page_delete.png"), author, confirm: "Are you sure?", method: :delete, title: "Delete Author"
