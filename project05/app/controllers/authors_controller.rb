@@ -56,7 +56,7 @@ class AuthorsController < ApplicationController
   # PUT /authors/1
   # PUT /authors/1.json
   def update
-    @author = Author.find(params[:id])
+    @author = Author.find(params[:id], include: :articles)
 
     respond_to do |format|
       if @author.update_attributes(params[:author])

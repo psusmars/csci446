@@ -36,7 +36,7 @@
           - @articles.each do |article|
             %tr{:class => cycle("list_line_odd", "list_line_even")}
               %td.title_column= article.title
-              %td.author_column= Author.find(article.author_id).name
+              %td.author_column= article.author.name
               %td.body_column= truncate(strip_tags(article.body), length: 42)
               %td.date_column= article.created_at.strftime("%A, %b. %d %Y")
       %td

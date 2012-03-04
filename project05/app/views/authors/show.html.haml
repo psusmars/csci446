@@ -12,7 +12,7 @@
     Articles by
     \#(@author.name):
   %ul
-    - Article.find_all_by_author_id(@author.id).each do |arti|
+    - @author.articles.each do |arti|
       %li
         = link_to arti[:title], article_path(arti)
         

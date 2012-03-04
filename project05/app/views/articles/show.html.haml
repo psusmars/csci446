@@ -19,7 +19,7 @@
 %p
   %h2= @article.title
 %p
-  by #{h link_to @author_name, author_path(@article.author_id)}. #{pluralize(@article.edits, "edit")} since #{@article.created_at.strftime("%A, %b. %d %Y")}.
+  by #{h link_to @article.author.name, author_path(@article.author_id)}. #{pluralize(@article.edits, "edit")} since #{@article.created_at.strftime("%A, %b. %d %Y")}.
 %br/
 %p
   = simple_format(sanitize(@article.body))
