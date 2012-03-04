@@ -2,12 +2,12 @@
 
 one:
   title: MyString
-  author: MyString
   body: MyText
   edits: 0
+  author_id: 1
 
 two:
   title: MyString
-  author: MyString
   body: MyText
   edits: 0
+  author_id: 1

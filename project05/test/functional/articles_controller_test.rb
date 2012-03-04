@@ -3,7 +3,7 @@ require 'test_helper'
 class ArticlesControllerTest < ActionController::TestCase
   setup do
     @article = articles(:one)
-		@author = @authors(:one)
+		@author = authors(:one)
 		@article.author_id = @author.id
   end
 
@@ -38,7 +38,7 @@ class ArticlesControllerTest < ActionController::TestCase
 
   test "should update article" do
     put :update, id: @article.to_param, article: @article.attributes, author: {author_id: @author.id}
-    assert_redirected_to article_path(assigns(:article))
+    assert_redirected_to articles_path
   end
 
   test "should destroy article" do

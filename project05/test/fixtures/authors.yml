@@ -5,11 +5,11 @@
 # below each fixture, per the syntax in the comments below
 #
 one: 
-	id: 1
-	name: MyString
+  id: 1
+  name: MyString
 # column: value
 #
 two: 
-	id: 1
-	name: MyString
+  id: 2
+  name: MyString
 #  column: value
