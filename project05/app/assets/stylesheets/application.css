@@ -103,6 +103,25 @@ table#article_table {
 	margin-bottom: 2px;
 }
 
+#menu_bar ul {
+    list-style-type: none;
+    background-color: #EEE;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding-right: 0px;
+    padding-left: 10px;
+    padding-bottom: 13px;
+    padding-top: 7px;
+    font-weight: bold;
+	width: 100%
+}
+#menu_bar ul li { 
+    display: inline; 
+    padding-right: 40%;
+}
+
 .horizontal_list ul{
     margin: 0; 
 	padding: 0; 

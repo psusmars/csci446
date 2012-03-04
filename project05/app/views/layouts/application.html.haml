@@ -9,5 +9,11 @@
     .header
       %h1 Articl.es
       %h3= yield :header
+    #menu_bar
+      %ul
+        %li
+          = link_to("Authors", authors_path, title: "View all authors")
+        %li
+          = link_to("Articles", articles_path, title: "View all articles")
     .main
       = yield
