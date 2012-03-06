@@ -15,7 +15,7 @@
     %tr
       .field
         %td.field_lable= f.label :author
-        %td= collection_select(:article, :author_id, Author.all, :id, :name, :prompt => true)
+        %td= f.select :author_id, @authors.collect{|a| [a.name, a.id]},  {:include_blank => "Select an Author"}
     %tr
       .field
         %td.field_label= f.label :body

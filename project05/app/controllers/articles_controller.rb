@@ -1,4 +1,7 @@
 class ArticlesController < ApplicationController
+
+	before_filter :get_authors
+
   # GET /articles
   # GET /articles.json
   def index
@@ -84,4 +87,9 @@ class ArticlesController < ApplicationController
       format.json { head :ok }
     end
   end
+	
+	private
+	def get_authors
+		@authors = Author.all
+	end
 end
