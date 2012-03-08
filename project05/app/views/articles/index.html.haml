@@ -49,6 +49,5 @@
                 = link_to image_tag("page_delete.png"), article, confirm: "Are you sure?", method: :delete, title: "Delete Article"
 %br/
 %p
-  = pluralize(@articles.size, "article")
-  \.
+  = pluralize(@articles.size, "article") + '.'
 = will_paginate @articles
