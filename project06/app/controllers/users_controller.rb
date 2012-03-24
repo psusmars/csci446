@@ -44,7 +44,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to users_url, notice: "User #{@user.username} was successfully created." }
+        flash[:notice] = "Registration successful."
+				format.html { redirect_to users_url, notice: "User #{@user.username} was successfully created." }
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }

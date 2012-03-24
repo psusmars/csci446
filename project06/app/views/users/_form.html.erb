@@ -5,7 +5,7 @@
 
       <ul>
       <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+        <li><%= msg.sub(/digest/, "") %></li>
       <% end %>
       </ul>
     </div>
