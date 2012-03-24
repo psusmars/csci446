@@ -1,4 +1,6 @@
 Gamez::Application.routes.draw do
+  resources :games
+
   resources :roles
 
   resources :user_sessions

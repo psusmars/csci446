@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
 	belongs_to :role
+	has_many :games, dependent: :destroy
 	
 	has_attached_file :photo, :styles => { :thumb => "100x100>" }
 	
