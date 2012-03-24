@@ -38,5 +38,8 @@
         %td.field_label= f.label :photo
         %td= f.file_field :photo
     %tr
+      %div
+        %td{:colspan => "2"}= recaptcha_tags
+    %tr
       .actions
         %td{:colspan => "2"}= f.submit "Register!"

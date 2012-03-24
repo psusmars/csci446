@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 gem 'erb2haml', :group => :development
 gem "haml"
 gem "paperclip", "~>2.0"
+gem "recaptcha", :require => "recaptcha/rails"
 
 gem 'rails', '3.1.0'
 

@@ -43,7 +43,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
 
     respond_to do |format|
-      if @user.save
+      if @user.save and verify_recaptcha()
         flash[:notice] = "Registration successful."
 				format.html { redirect_to users_url, notice: "User #{@user.username} was successfully created." }
         format.json { render json: @user, status: :created, location: @user }
