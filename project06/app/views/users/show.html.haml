@@ -1,10 +1,10 @@
 %p#notice= notice
 %p
   %b Name:
-  = @user.name
+  = @user.username
 %p
-  %b Password digest:
-  = @user.password_digest
+  %b email:
+  = @user.email
 = link_to 'Edit', edit_user_path(@user)
 |
 \#{link_to 'Back', users_path}

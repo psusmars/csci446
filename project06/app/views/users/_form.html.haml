@@ -21,5 +21,9 @@
         %td= f.label :password_confirmation, "Confirm Confirmation"
         %td= f.password_field :password_confirmation, size: 35
     %tr
+      %div
+        %td= f.label :email, "Email"
+        %td= f.text_field :email, size: 35
+    %tr
       .actions
-        %td{:colspan => "2"}= f.submit
+        %td{:colspan => "2"}= f.submit "Register!"
