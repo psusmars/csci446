@@ -1,6 +1,14 @@
 class User < ActiveRecord::Base
 	belongs_to :role
 	
+	has_attached_file :photo, :styles => { :thumb => "100x100>" }
+	
+	validates :first_name, presence: true
+	validates :last_name, presence: true
+	
+	validates_attachment_size :photo, :less_than => 5.megabytes
+	validates_attachment_content_type :photo, :content_type => ['image/png', 'image/jpeg', 'image/jpg']
+	
 	acts_as_authentic do |c|
 		c.validates_uniqueness_of_email_field_options = {:if => "false"}
 		c.validates_length_of_password_field_options = {:if => "true", :minimum => 6}
@@ -12,7 +20,4 @@ class User < ActiveRecord::Base
   def role_symbols
     [role.to_sym]
   end
-	
-	
-	
 end

@@ -18,7 +18,7 @@ Gamez::Application.routes.draw do
 	controller :user_sessions do
 		get 'login' => :new
 		post 'login' => :create
-		delete 'logout' => :destroy
+		post 'logout' => :destroy
 	end
 	
   # Sample resource route (maps HTTP verbs to controller actions automatically):
