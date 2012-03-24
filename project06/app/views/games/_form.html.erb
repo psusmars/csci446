@@ -12,9 +12,15 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
+    
     <%= f.text_field :title %>
   </div>
+	<div class="field">
+		<%= f.label :rating %><br />
+		<% Game::RATINGS.each do |ra| %>
+			<%= f.radio_button @game, "rating", @game.rating %>
+		<% end %>
+	</div>
   <div class="actions">
     <%= f.submit %>
   </div>
