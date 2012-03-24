@@ -12,5 +12,5 @@ Role.delete_all
 admin = Role.create(name: "Admin")
 member = Role.create(name: "Member")
 
-User.create(username: "administrator", first_name: "admin", last_name: "istrator", password: "password", role_id: admin.id)
-User.create(username: "member", first_name: "mem", last_name: "ber", password: "password", role_id: member.id)
+User.create(username: "administrator", first_name: "admin", last_name: "istrator", email: "administrator@admin.com", password: "password", role_id: admin.id)
+User.create(username: "member", first_name: "mem", last_name: "ber", email: "member@mem.com", password: "password", role_id: member.id)
