@@ -1,0 +1,21 @@
+= form_for(@user_session) do |f|
+  - if @user_session.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@user_session.errors.count, "error")
+        prohibited this user_session from being saved:
+      %ul
+        - @user_session.errors.full_messages.each do |msg|
+          %li= msg
+  %table#form_table
+    %tr
+      .field
+        %td= f.label :username, "Username"
+        %td= f.text_field :username, size: 35
+    %tr
+      %div
+        %td= f.label :password, "Password"
+        %td= f.password_field :password, size: 35
+    %tr
+      .actions
+        %td{:colspan => "2"}= f.submit
