@@ -11,17 +11,29 @@
     </div>
   <% end %>
 
-  <div class="field">
-    
-    <%= f.text_field :title %>
-  </div>
-	<div class="field">
-		<%= f.label :rating %><br />
-		<% Game::RATINGS.each do |ra| %>
-			<%= f.radio_button @game, "rating", @game.rating %>
-		<% end %>
-	</div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+	<table>
+	<tr>
+		<div class="field">
+			<td><%= f.label :title %></td>
+			<td><%= f.text_field :title %></td>
+		</div>
+	</tr>
+	<tr>
+		<td />
+		<td>
+			<div class="field">
+				<% Game::RATINGS.each do |ra| %>
+					<%= f.radio_button :rating, ra.to_s %> <%= f.label :rating, ra.to_s %><br />
+				<% end %>
+			</div>
+		</td>
+	</tr>
+	<tr>
+		<td />
+		<td>
+			<div class="actions">
+				<%= f.submit "Save" %>
+			</div>
+		</td>
+	</table>
 <% end %>
