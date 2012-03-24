@@ -9,8 +9,8 @@
 User.delete_all
 Role.delete_all
 
-Role.create(name: "Admin")
-Role.create(name: "Member")
+admin = Role.create(name: "Admin")
+member = Role.create(name: "Member")
 
-User.create(username: "administrator", password: "password")
-User.create(username: "member", password: "password")
+User.create(username: "administrator", password: "password", role_id: admin.id)
+User.create(username: "member", password: "password", role_id: member.id)
