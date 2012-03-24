@@ -3,6 +3,8 @@
 <table>
   <tr>
     <th>Title</th>
+		<th>Rating</th>
+		<th>Date Added</th>
     <th></th>
     <th></th>
     <th></th>
@@ -11,6 +13,15 @@
 <% @games.each do |game| %>
   <tr>
     <td><%= game.title %></td>
+		<td><%= game.rating %></td>
+		<td><%= game.created_at.strftime("%b. %d %Y") %>
+			by
+			<% if current_user != nil and current_user.id == game.user_id %>
+				me
+			<% else %>
+				<%= "#{game.user.first_name} #{game.user.last_name}" %>
+			<% end %>
+		</td>
     <td><%= link_to 'Show', game %></td>
     <td><%= link_to 'Edit', edit_game_path(game) %></td>
     <td><%= link_to 'Destroy', game, confirm: 'Are you sure?', method: :delete %></td>
@@ -19,5 +30,5 @@
 </table>
 
 <br />
-
+<%= will_paginate @games %>
 <%= link_to 'New Game', new_game_path %>
