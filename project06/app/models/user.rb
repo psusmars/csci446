@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 	belongs_to :role
-	#has_one :profile
+	
 	acts_as_authentic do |c|
 		c.validates_uniqueness_of_email_field_options = {:if => "false"}
 		c.validates_length_of_password_field_options = {:if => "true", :minimum => 6}

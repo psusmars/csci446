@@ -25,5 +25,9 @@
         %td= f.label :email, "Email"
         %td= f.text_field :email, size: 35
     %tr
+      %div
+        %td= f.label :first_name, "First name"
+        %td= f.text_field :first_name, size: 35
+    %tr
       .actions
         %td{:colspan => "2"}= f.submit "Register!"
