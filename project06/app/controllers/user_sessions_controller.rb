@@ -1,14 +1,9 @@
 class UserSessionsController < ApplicationController
 
-
-  # GET /user_sessions/new
-  # GET /user_sessions/new.json
   def new
     @user_session = UserSession.new
   end
 
-  # POST /user_sessions
-  # POST /user_sessions.json
 	def create
 		@user_session = UserSession.new(params[:user_session])
 		if @user_session.save
