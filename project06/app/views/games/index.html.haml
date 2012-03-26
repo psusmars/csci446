@@ -1,0 +1,26 @@
+%h1 Listing games
+%table
+  %tr
+    %th Title
+    %th Rating
+    %th Date Added
+    %th
+    %th
+    %th
+  - @games.each do |game|
+    %tr
+      %td= game.title
+      %td= game.rating
+      %td
+        = game.created_at.strftime("%b. %d %Y")
+        by
+        - if current_user != nil and current_user.id == game.user_id
+          me
+        - else
+          = get_first_and_last_name_string(game.user)
+      %td= link_to 'Show', game
+      %td= link_to 'Edit', edit_game_path(game)
+      %td= link_to 'Destroy', game, confirm: 'Are you sure?', method: :delete
+%br/
+= will_paginate @games
+= link_to 'New Game', new_game_path
