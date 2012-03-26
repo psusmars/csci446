@@ -42,7 +42,7 @@
         %td.field_label= f.label :photo
         %td= f.file_field :photo
         %td
-          -if !@user.new_record? and @user.photo.file?
+          -if is_new_user_and_has_file?(@user)
             = image_tag @user.photo.url(:thumb)
     -if @user.new_record?
       %tr
