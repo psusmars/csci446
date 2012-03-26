@@ -16,6 +16,9 @@
         = link_to "Register", new_user_path
          
         \#{link_to "Login", login_path}
+    %br/
+    %h1#title 
+      = link_to "Gamez", root_path
     - if notice
       %p#notice= notice
     = yield
