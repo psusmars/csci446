@@ -3,7 +3,8 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
-
+		@users = User.paginate page: params[:page], order: 'first_name desc',	per_page: 10
+		
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @users }
@@ -44,8 +45,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save and verify_recaptcha()
-        flash[:notice] = "Registration successful."
-				format.html { redirect_to users_url, notice: "User #{@user.username} was successfully created." }
+				format.html { redirect_to root_url, notice: "Registration successful." }
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }
@@ -61,7 +61,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to users_url, notice: "User #{@user.username} was successfully updated." }
+        format.html { redirect_to root_url, notice: "User #{@user.username} was successfully updated." }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
