@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @users = User.all
-		@users = User.paginate page: params[:page], order: 'first_name desc',	per_page: 10
+		@users = User.paginate page: params[:page], order: 'last_name asc',	per_page: 10
 		
     respond_to do |format|
       format.html # index.html.erb
@@ -35,7 +35,12 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    @user = current_user
+	#TODO IS THIS CORRECT?
+		if current_user.admin?
+			@user = User.find(params[:id])
+		else
+			@user = current_user
+		end
   end
 
   # POST /users
@@ -57,11 +62,15 @@ class UsersController < ApplicationController
   # PUT /users/1
   # PUT /users/1.json
   def update
-    @user = current_user
+		if current_user.admin?
+			@user = User.find(params[:id])
+		else
+			@user = current_user
+		end
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to root_url, notice: "User #{@user.username} was successfully updated." }
+        format.html { redirect_to root_url, notice: "Successfully updated profile" }
         format.json { head :ok }
       else
         format.html { render action: "edit" }

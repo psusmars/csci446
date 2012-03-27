@@ -26,7 +26,7 @@ class User < ActiveRecord::Base
 		end
 	end
 	
-  def role_symbols
-    [role.to_sym]
-  end
+	def admin?
+		self.role.name.downcase == "administrator"
+	end
 end
