@@ -8,7 +8,7 @@
     %th Number of Games
   - @users.each do |user|
     %tr
-      %td= link_to get_first_and_last_name_string(user), edit_user_path(:id)
+      %td= link_to get_first_and_last_name_string(user), edit_user_path(user.id)
       %td= user.username
       %td= get_last_login_as_string(user)
       %td= user.games.count

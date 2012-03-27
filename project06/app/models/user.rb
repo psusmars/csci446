@@ -27,6 +27,6 @@ class User < ActiveRecord::Base
 	end
 	
 	def admin?
-		self.role.name.downcase == "administrator"
+		self.role.name.downcase == "admin"
 	end
 end

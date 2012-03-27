@@ -36,7 +36,7 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
 	#TODO IS THIS CORRECT?
-		if current_user.admin?
+		if current_user.admin? and params[:id] != "id"
 			@user = User.find(params[:id])
 		else
 			@user = current_user
@@ -62,7 +62,7 @@ class UsersController < ApplicationController
   # PUT /users/1
   # PUT /users/1.json
   def update
-		if current_user.admin?
+		if current_user.admin? and params[:id] != "id"
 			@user = User.find(params[:id])
 		else
 			@user = current_user
