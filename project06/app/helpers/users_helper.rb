@@ -8,4 +8,11 @@ module UsersHelper
 		"#{user.first_name} #{user.last_name}"
 	end
 	
+	def get_last_login_as_string user
+		if user.last_login_at.nil?
+			"Never"
+		else
+			distance_of_time_in_words_to_now(user.last_login_at) + " ago"
+		end
+	end
 end

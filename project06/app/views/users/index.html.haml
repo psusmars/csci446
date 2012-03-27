@@ -2,14 +2,14 @@
 %table
   %tr
     %th Name
-    %th
-    %th
-    %th
+    %th Username
+    %th Last Login
+    %th Number of Games
   - @users.each do |user|
     %tr
+      %td= link_to get_first_and_last_name_string(user), edit_user_path(:id)
       %td= user.username
-      %td= link_to 'Show', user
-      %td= link_to 'Edit', edit_user_path(user)
-      %td= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete
+      %td= get_last_login_as_string(user)
+      %td= user.games.count
 %br/
 = link_to 'New User', new_user_path
