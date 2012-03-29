@@ -1,4 +1,4 @@
-class RolesController < ApplicationController
+class Admin::RolesController < Admin::AdminController
   # GET /roles
   # GET /roles.json
   def index

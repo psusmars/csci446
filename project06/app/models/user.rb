@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-	belongs_to :role
+	belongs_to :role, :counter_cache => true
 	has_many :games, dependent: :destroy
 	
 	has_attached_file :photo, :styles => { :thumb => "100x100>" }
@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
 	
 	validates_attachment_size :photo, :less_than => 5.megabytes
 	validates_attachment_content_type :photo, :content_type => ['image/png', 'image/jpeg', 'image/jpg']
+	
+	default_scope :include => [:role]
 	
 	before_save :add_role
 	
@@ -29,4 +31,9 @@ class User < ActiveRecord::Base
 	def admin?
 		self.role.name.downcase == "admin"
 	end
+	
+	def role_symbols
+		[role.name.downcase.to_sym]
+	end
+	
 end
