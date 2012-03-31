@@ -11,15 +11,7 @@
     - if flash[:error]
       %p#error= flash[:error]
     #user_nav
-      - if current_user
-        Logged in as 
-        \#{link_to get_first_and_last_name_string(current_user), edit_user_path(:id)},
-        =current_user.role.name + "."
-        \#{link_to "Logout", logout_path, :method => :destroy}
-      - else
-        = link_to "Register", new_user_path
-         
-        \#{link_to "Login", login_path}
+      = yield :user_nav
     %br/
     %h1#title 
       = link_to "Gamez", root_path

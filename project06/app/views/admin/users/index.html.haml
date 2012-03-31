@@ -1,5 +1,6 @@
+= render "members/member_nav"
 %h2 Users
-= will_paginate @games
+= will_paginate @users
 %table
   %tr
     %th Name
@@ -8,9 +9,8 @@
     %th Number of Games
   - @users.each do |user|
     %tr
-      %td= link_to get_first_and_last_name_string(user), edit_user_path(user.id)
+      %td= link_to get_first_and_last_name_string(user), edit_admin_user_path(user.id)
       %td= user.username
       %td= get_last_login_as_string(user)
       %td= user.games.count
 %br/
-= link_to 'New User', new_user_path

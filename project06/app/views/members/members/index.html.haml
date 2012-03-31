@@ -1,5 +1,6 @@
+= render "members/member_nav"
 %h2 My Gamez 
-= link_to "Add a new game", new_game_path
+= link_to "Add a new game", new_members_game_path
 = will_paginate @games
 %table.index_table
   %thead
@@ -12,14 +13,11 @@
   %tbody
   - @games.each do |game|
     %tr
-      %td= link_to game.title, edit_game_path(game)
-      %td= game.rating
-      %td
-        = game.created_at.strftime("%b. %d %Y")
-        by
-        - if current_user != nil and current_user.id == game.user_id
-          me
-        - else
-          = link_to get_first_and_last_name_string(game.user), edit_admin_user_path(game.user)
+      - if current_user.id == game.user_id
+        %td= link_to game.title, edit_members_game_path(game) 
+        %td= game.rating
+        %td
+          = game.created_at.strftime("%b. %d %Y")
+          by me
 %br/
 = render_game_totals_for_user current_user

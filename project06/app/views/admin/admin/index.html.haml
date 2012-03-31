@@ -1,3 +1,9 @@
+= conent_for :user_nav
+  Logged in as 
+  \#{link_to get_first_and_last_name_string(current_user), admin_edit_user_path(:id)},
+  =current_user.role.name + "."
+  =link_to "My Games", admin_root_url
+    \#{link_to "Logout", logout_path, :method => :destroy}
 %h2 Listing games
 = pluralize(@games_count, "Total Game")
 = link_to "Add a game", new_game_path

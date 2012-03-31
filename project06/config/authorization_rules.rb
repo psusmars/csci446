@@ -17,7 +17,10 @@ authorization do
   role :member do
 		includes :guest
 		has_permission_on :members_members, :to => :read
-		has_permission_on :games, :to => [:new, :create, :edit, :update]
+		has_permission_on :members_users, :to => [:edit, :update] do
+			if_attribute :id => is { user.id }
+    end
+		has_permission_on :members_games, :to => [:new, :create, :edit, :update]
   end
 end
 

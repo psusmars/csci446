@@ -29,10 +29,13 @@ Gamez::Application.routes.draw do
 	namespace "admin" do 
 		resources :roles
 		resources :users
+		resources :games
 		root controller: 'admin', action: 'index'
 	end
 	
 	namespace "members" do 
+		resources :users
+		resources :games
 		root controller: 'members', action: 'index'
 	end
 	

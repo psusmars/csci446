@@ -1,0 +1,6 @@
+- content_for :user_nav do
+  Logged in as 
+  \#{link_to get_first_and_last_name_string(current_user), edit_members_user_path(current_user)},
+  =current_user.role.name + "."
+  \#{link_to "My Games", members_root_path} 
+  \#{link_to "Logout", logout_path, :method => :destroy}

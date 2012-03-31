@@ -1,0 +1,27 @@
+= form_for(@game) do |f|
+  - if @game.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@game.errors.count, "error")
+        prohibited this game from being saved:
+      %ul
+        - @game.errors.full_messages.each do |msg|
+          %li= msg
+  %table
+    %tr
+      .field
+        %td= f.label :title
+        %td= f.text_field :title
+    %tr
+      %td/
+      %td
+        .field
+          - Game::RATINGS.each do |ra|
+            = f.radio_button :rating, ra.to_s
+            = f.label :rating, ra.to_s
+            %br/
+    %tr
+      %td/
+      %td
+        .actions
+          = f.submit "Save"
