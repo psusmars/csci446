@@ -8,6 +8,8 @@
   %body
     - if notice
       %p#notice= notice
+    - if flash[:error]
+      %p#error= flash[:error]
     #user_nav
       - if current_user
         Logged in as 

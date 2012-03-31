@@ -1,6 +1,4 @@
 %h2 Listing games
-= pluralize(@games_count, "Total Game")
-= link_to "Add a game", new_game_path
 = will_paginate @games
 %table.index_table
   %thead
@@ -23,7 +21,4 @@
           me
         - else
           = get_first_and_last_name_string(game.user)
-      %td= link_to 'Show', game
-      %td= link_to 'Edit', edit_game_path(game)
-      %td= link_to 'Destroy', game, confirm: 'Are you sure?', method: :delete
 %br/

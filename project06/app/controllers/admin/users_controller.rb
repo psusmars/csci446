@@ -1,5 +1,5 @@
 class Admin::UsersController < Admin::AdminController
-	#before_filter :find_user, :only => [:show, :edit, :update, :destroy]
+	filter_resource_access
   # GET /users
   # GET /users.json
   def index
