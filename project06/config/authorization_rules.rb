@@ -16,6 +16,7 @@ authorization do
   
   role :member do
 		includes :guest
+		has_permission_on :members_members, :to => :read
 		has_permission_on :games, :to => [:new, :create, :edit, :update]
   end
 end

@@ -1,6 +1,5 @@
-%h2 Listing games
-= pluralize(@games_count, "Total Game")
-= link_to "Add a game", new_game_path
+%h2 My Gamez 
+= link_to "Add a new game", new_game_path
 = will_paginate @games
 %table.index_table
   %thead
@@ -8,6 +7,8 @@
       %th Title
       %th Rating
       %th Date Added
+      %th
+      %th
   %tbody
   - @games.each do |game|
     %tr
@@ -21,3 +22,4 @@
         - else
           = link_to get_first_and_last_name_string(game.user), edit_admin_user_path(game.user)
 %br/
+= render_game_totals_for_user current_user

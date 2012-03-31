@@ -32,6 +32,10 @@ Gamez::Application.routes.draw do
 		root controller: 'admin', action: 'index'
 	end
 	
+	namespace "members" do 
+		root controller: 'members', action: 'index'
+	end
+	
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.
