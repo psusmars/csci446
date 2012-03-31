@@ -5,7 +5,5 @@
     %th Number of Users
   - @roles.each do |role|
     %tr
-      %td= role.name
+      %td= link_to role.name, edit_admin_role_path(role.id)
       %td= role.users.count
-%br/
-= link_to 'New Role', new_role_path

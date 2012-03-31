@@ -1,0 +1,56 @@
+= form_for(@user) do |f|
+  - if @user.errors.any?
+    #error_explanation
+      %h2
+        Sorry, could not register you
+      %ul
+        - @user.errors.full_messages.each do |msg|
+          %li= msg
+  %table#form_table
+    %tr
+      .field
+        %td= f.label :username, "Username"
+        %td= f.text_field :username, size: 20
+        %td
+    %tr
+      .field
+        %td= f.label :password, "Password"
+        %td= f.password_field :password, size: 20
+        %td
+    %tr
+      .field
+        %td= f.label :password_confirmation, "Password Confirmation"
+        %td= f.password_field :password_confirmation, size: 20
+        %td
+    %tr
+      .field
+        %td= f.label :first_name, "First name"
+        %td= f.text_field :first_name, size: 15
+        %td
+    %tr
+      .field
+        %td= f.label :last_name, "Last name"
+        %td= f.text_field :last_name, size: 15
+        %td
+    %tr
+      .field
+        %td= f.label :email, "Email"
+        %td= f.text_field :email, size: 20
+        %td
+    %tr
+      .field
+        %td.field_label= f.label :photo
+        %td= f.file_field :photo
+        %td
+          -if is_new_user_and_has_file?(@user)
+            = image_tag @user.photo.url(:thumb)
+    -if @user.new_record?
+      %tr
+        %div
+          %td{:colspan => "2"}= recaptcha_tags
+    %tr
+      .actions
+        -if @user.new_record?
+          %td{:colspan => "2"}= f.submit "Register!"
+        -else
+          %td{:colspan => "2"}= f.submit "Save Changes"

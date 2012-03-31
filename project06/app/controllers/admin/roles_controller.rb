@@ -60,7 +60,7 @@ class Admin::RolesController < Admin::AdminController
 
     respond_to do |format|
       if @role.update_attributes(params[:role])
-        format.html { redirect_to @role, notice: 'Role was successfully updated.' }
+        format.html { redirect_to admin_root_url, notice: 'Role was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
@@ -76,7 +76,7 @@ class Admin::RolesController < Admin::AdminController
     @role.destroy
 
     respond_to do |format|
-      format.html { redirect_to roles_url }
+      format.html { redirect_to admin_roles_url }
       format.json { head :ok }
     end
   end

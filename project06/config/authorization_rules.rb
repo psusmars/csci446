@@ -1,6 +1,7 @@
 authorization do
   role :admin do
-    #has_permission_on [:articles, :comments], :to => [:index, :show, :new, :create, :edit, :update, :destroy]
+    #has_permission_on :admin_users, :to => :manage
+		#has_permission_on :admin_roles, :to => :manage
   end
   
   role :guest do

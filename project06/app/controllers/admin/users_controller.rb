@@ -1,5 +1,5 @@
 class Admin::UsersController < Admin::AdminController
-	before_filter :find_userj, :only => [:show, :edit, :update, :destroy]
+	#before_filter :find_user, :only => [:show, :edit, :update, :destroy]
   # GET /users
   # GET /users.json
   def index
