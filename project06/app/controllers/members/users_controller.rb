@@ -31,11 +31,7 @@ class Members::UsersController < Members::MembersController
   # PUT /users/1
   # PUT /users/1.json
   def update
-		if current_user.admin? and params[:id] != "id"
-			@user = User.find(params[:id])
-		else
-			@user = current_user
-		end
+		@user = current_user
 
     respond_to do |format|
       if @user.update_attributes(params[:user])

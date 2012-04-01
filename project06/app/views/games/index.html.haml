@@ -1,7 +1,4 @@
-- content_for :user_nav do
-  = link_to "Register", new_user_path
-   
-  \#{link_to "Login", login_path}
+= render "/login_nav"
 %h2 Listing games
 = will_paginate @games
 %table.index_table

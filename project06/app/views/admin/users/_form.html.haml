@@ -2,7 +2,7 @@
   - if @user.errors.any?
     #error_explanation
       %h2
-        Sorry, could not register you
+        Could not save profile.
       %ul
         - @user.errors.full_messages.each do |msg|
           %li= msg

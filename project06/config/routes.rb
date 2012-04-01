@@ -39,5 +39,7 @@ Gamez::Application.routes.draw do
 	end
 	
   # MATCHES
-	match "regiser" => "users#new"
+	match "register" => "users#new"
+	match "login" => "user_sessions#new"
+	match "members/me" => "members/users#edit"
 end
