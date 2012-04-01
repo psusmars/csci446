@@ -8,8 +8,6 @@
       %th Title
       %th Rating
       %th Date Added
-      %th
-      %th
   %tbody
   - @games.each do |game|
     %tr
@@ -19,5 +17,5 @@
         %td
           = game.created_at.strftime("%b. %d %Y")
           by me
-%br/
+
 = render_game_totals_for_user current_user

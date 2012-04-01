@@ -4,8 +4,7 @@ class Members::MembersController < ApplicationController
 	filter_access_to :all
 	
 	def index
-		@games_count = Game.count
-		@games = Game.paginate page: params[:page], order: 'created_at desc',	per_page: 10
+		@games = Game.where(:user_id => current_user.id).paginate(page: params[:page]).order('created_at desc').per_page(10)
 	end
 	
 	protected

@@ -1,0 +1,22 @@
+= render "/login_nav"
+%h2 Listing games
+= will_paginate @games
+%table.index_table
+  %thead
+    %tr
+      %th Title
+      %th Rating
+      %th Date Added
+  %tbody
+  - @games.each do |game|
+    %tr
+      %td= game.title
+      %td= game.rating
+      %td
+        = game.created_at.strftime("%b. %d %Y")
+        by
+        - if current_user != nil and current_user.id == game.user_id
+          me
+        - else
+          = get_first_and_last_name_string(game.user)
+%br/
