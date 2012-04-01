@@ -8,7 +8,7 @@ class UserSessionsController < ApplicationController
 		@user_session = UserSession.new(params[:user_session])
 		if @user_session.save
 			flash[:notice] = "Successfully logged in."
-			if current_user.role.name.downcase == 'admin'
+			if current_user.admin?
 				redirect_to admin_root_url
 			else
 				redirect_to members_root_url

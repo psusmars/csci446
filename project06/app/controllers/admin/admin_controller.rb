@@ -12,7 +12,11 @@ class Admin::AdminController < ApplicationController
 		def permission_denied
 			flash[:error] = "You do not have access to #{request.path}."
 			respond_to do |format|
-				format.html {redirect_to admin_root_url}
+				if current_user.admin?
+					format.html {redirect_to admin_root_url}
+				else
+					format.html {redirect_to members_root_url}
+				end
 			end
 		end
 
