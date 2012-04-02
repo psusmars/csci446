@@ -1,4 +1,4 @@
-class GamesController < ApplicationController
+class Members::GamesController < Members::ApplicationController
   # GET /games
   # GET /games.json
   def index
@@ -62,7 +62,7 @@ class GamesController < ApplicationController
 
     respond_to do |format|
       if @game.update_attributes(params[:game])
-        format.html { redirect_to @game, notice: "Successfully updated #{@game.title}."}
+        format.html { redirect_to members_root_url, notice: "Successfully updated #{@game.title}."}
         format.json { head :ok }
       else
         format.html { render action: "edit" }

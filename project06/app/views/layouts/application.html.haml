@@ -6,10 +6,6 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    - if notice
-      %p#notice= notice
-    - if flash[:error]
-      %p#error= flash[:error]
     #user_nav
       - if current_user
         - if current_user.admin?
@@ -19,6 +15,10 @@
       - else
         = render "/login_nav"
     %br/
+    - if notice
+      %p#notice= notice
+    - if flash[:error]
+      %p#error= flash[:error]
     %h1#title 
       = link_to "Gamez", root_path
       = yield :title
