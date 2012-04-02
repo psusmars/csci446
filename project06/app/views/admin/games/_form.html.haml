@@ -1,4 +1,4 @@
-= form_for(@game) do |f|
+= form_for [:admin, @game] do |f|
   - if @game.errors.any?
     #error_explanation
       %h2
@@ -22,8 +22,8 @@
             %br/
     %tr
       .field
-        %td= f.label :owner
-        %td= f.select(:user_id, User.all.collect{|a|[a.username,a.id]}
+        %td= f.label :owner, "Owner: "
+        %td= f.select(:user_id, User.all.collect{|a|[a.username,a.id]})
     %tr
       %td/
       %td

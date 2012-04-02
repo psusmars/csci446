@@ -1,4 +1,5 @@
-= render "members/member_nav"
+- content_for :title do
+  Admin
 %h2 Users
 = will_paginate @users
 %table

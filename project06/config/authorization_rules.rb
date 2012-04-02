@@ -1,6 +1,7 @@
 authorization do
   role :admin do
 		includes :member
+		has_permission_on :admin_games, :to => :manage
     has_permission_on :admin_users, :to => :manage
 		has_permission_on :admin_roles, :to => :manage
 		has_permission_on :admin_admin, :to => :read

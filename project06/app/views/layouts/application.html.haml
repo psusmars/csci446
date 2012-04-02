@@ -11,8 +11,22 @@
     - if flash[:error]
       %p#error= flash[:error]
     #user_nav
-      = yield :user_nav
+      - if current_user
+        - if current_user.admin?
+          = render "admin/admin_nav"
+        - else
+          = render "members/member_nav"
+      - else
+        = render "/login_nav"
     %br/
     %h1#title 
       = link_to "Gamez", root_path
+      = yield :title
+    - if current_user and current_user.admin?
+      %table.admin_bar
+        %thead
+          %tr
+            %th= link_to "Games", admin_root_url
+            %th= link_to "Users", admin_users_url
+            %th= link_to "Roles", admin_roles_url
     = yield

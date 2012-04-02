@@ -1,7 +1,8 @@
-= render "admin/admin_nav"
+- content_for :title do
+  Admin
 %h2 Listing games
 = pluralize(@games_count, "Total Game")
-= link_to "Add a game", new_game_path
+= link_to "Add a game", new_admin_game_path
 = will_paginate @games
 %table.index_table
   %thead
@@ -12,7 +13,7 @@
   %tbody
   - @games.each do |game|
     %tr
-      %td= link_to game.title, edit_game_path(game)
+      %td= link_to game.title, edit_admin_game_path(game)
       %td= game.rating
       %td
         = game.created_at.strftime("%b. %d %Y")

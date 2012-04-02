@@ -36,12 +36,7 @@ class Admin::UsersController < Admin::AdminController
 
   # GET /users/1/edit
   def edit
-	#TODO IS THIS CORRECT?
-		if current_user.admin? and params[:id] != "id"
-			@user = User.find(params[:id])
-		else
-			@user = current_user
-		end
+		@user = current_user
   end
 
   # POST /users
@@ -63,15 +58,11 @@ class Admin::UsersController < Admin::AdminController
   # PUT /users/1
   # PUT /users/1.json
   def update
-		if current_user.admin? and params[:id] != "id"
-			@user = User.find(params[:id])
-		else
-			@user = current_user
-		end
+		@user = User.find(params[:id])
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to root_url, notice: "Successfully updated profile" }
+        format.html { redirect_to admin_root_url, notice: "Successfully updated profile" }
         format.json { head :ok }
       else
         format.html { render action: "edit" }

@@ -41,5 +41,5 @@ Gamez::Application.routes.draw do
   # MATCHES
 	match "register" => "users#new"
 	match "login" => "user_sessions#new"
-	match "members/me" => "members/users#edit"
+	match "/members/me" => "members/users#edit", :as => :me
 end
