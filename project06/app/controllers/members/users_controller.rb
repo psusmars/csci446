@@ -1,5 +1,4 @@
 class Members::UsersController < Members::MembersController
-	filter_resource_access
   # GET /users
   # GET /users.json
   def index

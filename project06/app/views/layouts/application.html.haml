@@ -7,13 +7,7 @@
     = csrf_meta_tags
   %body
     #user_nav
-      - if current_user
-        - if current_user.admin?
-          = render "admin/admin_nav"
-        - else
-          = render "members/member_nav"
-      - else
-        = render "/login_nav"
+      user_nav
     %br/
     - if notice
       %p#notice= notice
