@@ -36,7 +36,7 @@ class Admin::UsersController < Admin::AdminController
 
   # GET /users/1/edit
   def edit
-		@user = current_user
+		@user = User.find(params[:id])
   end
 
   # POST /users
