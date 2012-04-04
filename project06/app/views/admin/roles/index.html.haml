@@ -9,4 +9,4 @@
   - @roles.each do |role|
     %tr
       %td= link_to role.name, edit_admin_role_path(role.id)
-      %td= role.users.count
+      %td= role.users_count

@@ -22,7 +22,7 @@ users = [yong, user]
 roles = [admin, member]
 
 for i in 0..100
-	users << User.create(username: "userxxx#{i}", first_name: "Garen #{i}", last_name: "Smith #{i}", email: "member@mem.com", password: "password", role_id: (roles.shuffle)[0].id)
+	users << User.create(username: "userxxx#{i}", first_name: "Garen #{i}", last_name: "Smith #{i}", email: "member@mem.com", password: "password", role_id: (roles.shuffle!)[0].id)
 end
 
 for i in 0..100
@@ -32,5 +32,5 @@ for i in 0..100
 	else
 		text = ""
 	end
-	Game.create(title: "Call of Doodle #{i}", rating: text, user_id: (users.shuffle)[0].id)
+	Game.create(title: "Call of Doodle #{i}", rating: text, user_id: (users.shuffle!)[0].id)
 end
