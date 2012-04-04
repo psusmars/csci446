@@ -15,8 +15,15 @@ member = Role.create(name: "Member")
 
 User.create(username: "administrator", first_name: "admin", last_name: "istrator", email: "administrator@admin.com", password: "password", role_id: admin.id)
 
-yong = User.Create(username: "ybakos", first_name: "Yong", last_name: "bakos", email: "bakos73@gmail.com", password: "password", role_id: member.id)
+yong = User.create(username: "ybakos", first_name: "Yong", last_name: "bakos", email: "bakos73@gmail.com", password: "password", role_id: member.id)
 user = User.create(username: "member", first_name: "mem", last_name: "ber", email: "member@mem.com", password: "password", role_id: member.id)
+
+users = [yong, user]
+roles = [admin, member]
+
+for i in 0..100
+	users << User.create(username: "userxxx#{i}", first_name: "Garen #{i}", last_name: "Smith #{i}", email: "member@mem.com", password: "password", role_id: (roles.shuffle)[0].id)
+end
 
 for i in 0..100
 	rating = rand(5)
@@ -25,5 +32,5 @@ for i in 0..100
 	else
 		text = ""
 	end
-	Game.create(title: "Call of Doodle #{i}", rating: text, user_id: user.id)
+	Game.create(title: "Call of Doodle #{i}", rating: text, user_id: (users.shuffle)[0].id)
 end

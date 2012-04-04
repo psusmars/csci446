@@ -7,10 +7,10 @@ class AddCounterCacheColumns < ActiveRecord::Migration
 		end
 		
 		
-		add_column :roles, :roles_count, :integer, :default => 0
+		add_column :roles, :users_count, :integer, :default => 0
 		Role.reset_column_information
 		Role.find(:all).each do |r|
-			Role.update_counters r.id, :roles_count => r.users.length
+			Role.update_counters r.id, :users_count => r.users.length
 		end
   end
 

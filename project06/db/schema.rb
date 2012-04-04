@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(:version => 20120402014639) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "roles_count", :default => 0
+    t.integer  "users_count", :default => 0
   end
 
   create_table "user_sessions", :force => true do |t|
