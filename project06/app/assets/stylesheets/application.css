@@ -9,3 +9,9 @@
 	float: right;
 	font-size: 12px;
 }
+
+table.index_table, .index_table td {
+	text-align: center;
+	border: 1px solid black;
+	border-collapse: collapse;
+}
