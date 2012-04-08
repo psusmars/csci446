@@ -17,8 +17,8 @@ module UsersHelper
 	end
 	
 	def render_game_totals_for_user user
-		count = current_user.games.count
+		count = current_user.games.size
 		rated = current_user.games.count(:conditions => "rating IS NOT NULL")
-		"I've created #{pluralize(current_user.games.count, "game")}, #{number_to_percentage(100.0*rated/count, :precision => 0)} of which are rated."
+		"I've created #{pluralize(current_user.games.size, "game")}, #{number_to_percentage(100.0*rated/count, :precision => 0)} of which are rated."
 	end
 end

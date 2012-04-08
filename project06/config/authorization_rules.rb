@@ -18,7 +18,10 @@ authorization do
 		has_permission_on :members_users, :to => [:edit, :update] do
 			if_attribute :id => is { user.id }
     end
-		has_permission_on :members_games, :to => [:new, :create, :edit, :update]
+		has_permission_on :members_games, :to => [:new, :create]
+		has_permission_on :members_games, :to => [:edit, :update] do
+			if_attribute :user_id => is { user.id }
+		end
   end
 end
 

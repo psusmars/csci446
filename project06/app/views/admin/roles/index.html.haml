@@ -2,11 +2,11 @@
   Admin
 %h2 Roles
 = will_paginate @roles
-%table
+%table.index_table
   %tr
     %th Name
     %th Number of Users
   - @roles.each do |role|
     %tr
       %td= link_to role.name, edit_admin_role_path(role.id)
-      %td= role.users_count
+      %td= role.users.size

@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
 	end
 	
 	def add_role
-		if self.new_record? and self.username != "administrator"
+		if self.new_record? && self.username != "administrator"
 			self.role_id = Role.find_by_name("Member").id
 		end
 	end

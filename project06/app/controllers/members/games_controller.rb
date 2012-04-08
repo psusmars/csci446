@@ -34,8 +34,8 @@ class Members::GamesController < Members::ApplicationController
   end
 
   # GET /games/1/edit
-  def edit
-    @game = Game.find(params[:id])
+  def edit 
+		@game = Game.find(params[:id])
   end
 
   # POST /games
