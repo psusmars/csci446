@@ -15,3 +15,17 @@ function populateHighScores(scores) {
 function updateScore(score) {
   $('h2#score span#guessesLeft').append(score);
 }
+
+function theGuess() {
+	guess = document.getElementById("guess").value;
+	guessesLeft--;
+	updateScore(guessesLeft);
+}
+
+function generateNumberToGuess() {
+	answer = Math.floor(Math.random()*100)
+}
+
+window.onload = function() {
+	generateNumberToGuess();
+}
