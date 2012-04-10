@@ -1,8 +1,10 @@
 var guessesLeft = 10;
+var answer = 0;
 var highScores = new Array([9, "HarryJamesPotter"], [3, "ZedCthulhu"], [2, "NearlyDied"]);
 
 $(function() {
   updateScore(guessesLeft);
+  generateNumberToGuess();
   populateHighScores(highScores);
 });
 
@@ -13,7 +15,7 @@ function populateHighScores(scores) {
 }
 
 function updateScore(score) {
-  $('h2#score span#guessesLeft').append(score);
+  $('h2#score span#guessesLeft').append(score + answer);
 }
 
 function theGuess() {
@@ -24,8 +26,4 @@ function theGuess() {
 
 function generateNumberToGuess() {
 	answer = Math.floor(Math.random()*100)
-}
-
-window.onload = function() {
-	generateNumberToGuess();
 }
