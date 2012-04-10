@@ -25,5 +25,5 @@ function theGuess() {
 }
 
 function generateNumberToGuess() {
-	answer = Math.floor(Math.random()*100)
+	answer = Math.floor((Math.random()*100)+1);
 }
