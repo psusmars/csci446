@@ -13,5 +13,5 @@
       %td= link_to get_first_and_last_name_string(user), edit_admin_user_path(user.id)
       %td= user.username
       %td= get_last_login_as_string(user)
-      %td= user.games_count
+      %td= user.games.size
 %br/
