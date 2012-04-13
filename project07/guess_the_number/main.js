@@ -19,7 +19,15 @@ function updateScore(score) {
 }
 
 function theGuess() {
-	guess = document.getElementById("guess").value;
+	var guess = document.getElementById("guess").value;
+	
+	if (guess == answer) {
+	
+	} else if (guess > numToGuess) {
+		alert("Your guess is too high!");
+	} else {
+		alert("Your guess is too low!");
+	}
 	guessesLeft--;
 	updateScore(guessesLeft);
 }

@@ -31,7 +31,7 @@ input#guess {
 }
 
 input#btnGuess {
-  font-size: 20em;
+  font-size: 20px;
 }
 
 form#guessTheNumber {
