@@ -3,10 +3,10 @@ var answer = 0;
 var highScores = new Array([9, "HarryJamesPotter"], [3, "ZedCthulhu"], [2, "NearlyDied"]);
 
 $(function() {
-  updateScore(guessesLeft);
-  generateNumberToGuess();
-  cheat();
-  populateHighScores(highScores);
+	updateScore(guessesLeft);
+	generateNumberToGuess();
+	cheat();
+	populateHighScores(highScores);
 });
 
 function cheat(){
@@ -15,13 +15,15 @@ function cheat(){
 
 function populateHighScores(scores) {
 	$('div#highScores').html("");
-  for (var i = 0; i < scores.length; ++i) {
-    $('div#highScores').append("<p>" + scores[i][0] + " " + scores[i][1] + "</p>");
-  }
+	//Sort the array by score
+	scores.sort(SortByScore);
+	for (var i = 0; i < scores.length; ++i) {
+		$('div#highScores').append("<p>" + scores[i][0] + " " + scores[i][1] + "</p>");
+	}
 }
 
 function updateScore(score) {
-  $('h2#score span#guessesLeft').html(score);
+	$('h2#score span#guessesLeft').html(score);
 }
 
 function theGuess() {
@@ -29,6 +31,7 @@ function theGuess() {
 	if (guess == answer) {
 		highScores.push([guessesLeft, "Anonymous"]);
 		populateHighScores(highScores);
+		$('form#guessTheNumber').before("<p>Play again?</p>");
 	} else if (guess > answer) {
 		alert("Your guess is too high!");
 	} else {
@@ -37,6 +40,21 @@ function theGuess() {
 
 	guessesLeft--;
 	updateScore(guessesLeft);
+}
+
+function SortByScore(x, y) {
+	var xScore = x[0];
+	var yScore = y[0];
+	if(xScore == yScore) 
+	{
+		return 0;
+	} else if (xScore < yScore) {
+		// x will come after y
+		return 1;
+	} else {
+		// x will come before y
+		return -1;
+	}
 }
 
 function generateNumberToGuess() {
