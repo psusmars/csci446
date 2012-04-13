@@ -29,7 +29,8 @@ function updateScore(score) {
 function theGuess() {
 	var guess = $("#guess").attr("value");
 	if (guess == answer) {
-		highScores.push([guessesLeft, "Anonymous"]);
+		var name = prompt("Enter your name for high scores: ", "Anonymous");
+		if( name != null ){ highScores.push([guessesLeft, name]); }
 		populateHighScores(highScores);
 		$('form#guessTheNumber').before("<p>Play again?</p>");
 	} else if (guess > answer) {
