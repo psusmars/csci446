@@ -15,19 +15,19 @@ function populateHighScores(scores) {
 }
 
 function updateScore(score) {
-  $('h2#score span#guessesLeft').append(score + answer);
+  $('h2#score span#guessesLeft').html(score);
 }
 
 function theGuess() {
-	var guess = document.getElementById("guess").value;
-	
+	var guess = $("#guess").attr("value");
 	if (guess == answer) {
 	
-	} else if (guess > numToGuess) {
+	} else if (guess > answer) {
 		alert("Your guess is too high!");
 	} else {
 		alert("Your guess is too low!");
 	}
+
 	guessesLeft--;
 	updateScore(guessesLeft);
 }
