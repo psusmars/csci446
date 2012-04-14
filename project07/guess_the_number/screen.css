@@ -21,6 +21,10 @@ h2 span.highScore {
   margin-right: -50px;
 }
 
+h2#end_game_text {
+	color: #3388CC
+}
+
 h2#score {
   color: #FFC125;
   margin: 0px;
