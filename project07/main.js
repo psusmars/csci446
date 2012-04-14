@@ -6,13 +6,8 @@ var highScores = new Array([9, "HarryJamesPotter"], [3, "ZedCthulhu"], [2, "Near
 $(function() {
 	updateScore(guessesLeft);
 	generateNumberToGuess();
-	cheat();
 	populateHighScores(highScores);
 });
-
-function cheat(){
-	highScores.push([answer, "answer"]);
-}
 
 function populateHighScores(scores) {
 	$('div#highScores').html("");
