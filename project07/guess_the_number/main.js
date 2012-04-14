@@ -36,18 +36,20 @@ function theGuess() {
 			if( name != null ){ highScores.push([guessesLeft, name]); }
 			populateHighScores(highScores);
 			$("#end_game_text").airport([ "You have outsmarted the zombies!",  "Play again?", "You have won!" ]);
+			$('#hint').html("");
 			done = true;
 		} else {
 			guessesLeft--;
 			if(guessesLeft <= 0)
 			{
-				$("#end_game_text").airport([ "You're brains are Zombified!",  "Play again?", "You have lost!" ]);
+				$("#end_game_text").airport([ "Your brains are Zombified!",  "Play again?", "You have lost!" ]);
+				$('#hint').html("");
 				done = true;
 			} else {
 				if (guess > answer) {
-					alert("Your guess is too high!");
+					$('#hint').html("Your guess is too high!");
 				} else {
-					alert("Your guess is too low!");
+					$('#hint').html("Your guess is too low!");
 				}
 			}
 			updateScore(guessesLeft);
@@ -95,15 +97,15 @@ $.fn.extend({
         function testChar(a, b, c, d) {
             if (c >= array.length) setTimeout(function() {
                 testChar(0, 0, 0, 0);
-            }, 1000);
+            }, 500);
             else if (d >= longest) setTimeout(function() {
                 testChar(0, 0, c + 1, 0);
-            }, 1000);
+            }, 500);
             else {
                 $(self).find('.c' + a).html((chars[b] == " ") ? "&nbsp;" : chars[b]);
                 setTimeout(function() {
                     if (b > chars.length) testChar(a + 1, 0, c, d + 1);
-                    else if (chars[b] != array[c].substring(d, d + 1).toLowerCase()) testChar(a, b + 1, c, d);
+                    else if (chars[b] != array[c].substring(d, d + 1)) testChar(a, b + 1, c, d);
                     else testChar(a + 1, 0, c, d + 1);
                 }, 20);
             }

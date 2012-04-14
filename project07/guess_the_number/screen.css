@@ -10,6 +10,11 @@ h1, h2 {
   color: #A39480;
 }
 
+h3 {
+	font-family: 'Nosifier', cursive;
+	color: #810541;
+}
+
 h1 {
   font-size: 4em;
   margin-top: 0px;
