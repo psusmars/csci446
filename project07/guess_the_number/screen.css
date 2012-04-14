@@ -44,3 +44,22 @@ form#guessTheNumber {
   border-bottom: 1px solid #000;
   padding: 20px;
 }
+a#end_game_text {
+	color: orange;
+	font-size: 20px;
+}
+
+a#end_game_text:link {
+	text-decoration:none;
+}
+a#end_game_text:visited {
+	text-decoration:none;
+}
+a#end_game_text:hover {
+	text-decoration:none;
+	font-weight: bold;
+}
+a#end_game_text:active {
+	text-decoration:none;
+	font-weight: bold;
+}
