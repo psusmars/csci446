@@ -1,5 +1,6 @@
 var guessesLeft = 10;
 var answer = 0;
+var done = false;
 var highScores = new Array([9, "HarryJamesPotter"], [3, "ZedCthulhu"], [2, "NearlyDied"]);
 
 $(function() {
@@ -27,20 +28,31 @@ function updateScore(score) {
 }
 
 function theGuess() {
-	var guess = $("#guess").attr("value");
-	if (guess == answer) {
-		var name = prompt("Enter your name for high scores: ", "Anonymous");
-		if( name != null ){ highScores.push([guessesLeft, name]); }
-		populateHighScores(highScores);
-		$("#end_game_text").airport([ "You're brains are Zombified!", "You have lost!", "Play again?" ]);
-	} else if (guess > answer) {
-		alert("Your guess is too high!");
-	} else {
-		alert("Your guess is too low!");
+	if(!done)
+	{
+		var guess = $("#guess").attr("value");
+		if (guess == answer) {
+			var name = prompt("Enter your name for high scores: ", "Anonymous");
+			if( name != null ){ highScores.push([guessesLeft, name]); }
+			populateHighScores(highScores);
+			$("#end_game_text").airport([ "You have outsmarted the zombies!",  "Play again?", "You have won!" ]);
+			done = true;
+		} else {
+			guessesLeft--;
+			if(guessesLeft <= 0)
+			{
+				$("#end_game_text").airport([ "You're brains are Zombified!",  "Play again?", "You have lost!" ]);
+				done = true;
+			} else {
+				if (guess > answer) {
+					alert("Your guess is too high!");
+				} else {
+					alert("Your guess is too low!");
+				}
+			}
+			updateScore(guessesLeft);
+		}
 	}
-
-	guessesLeft--;
-	updateScore(guessesLeft);
 }
 
 function SortByScore(x, y) {
