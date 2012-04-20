@@ -22,24 +22,32 @@ function updateScore(score) {
 	$('h2#score span#guessesLeft').html(score);
 }
 
+function doEndGame() {
+	$('div#inputArea').hide(1000);
+	done = true;
+}
+
 function theGuess() {
 	if(!done)
 	{
 		var guess = $("#guess").attr("value");
+		if (isNaN(guess) || guess == "")
+		{
+			$('#hint').html("Invalid input! Try again.");
+			return;
+		}
 		if (guess == answer) {
 			var name = prompt("Enter your name for high scores: ", "Anonymous");
 			if( name != null ){ highScores.push([guessesLeft, name]); }
 			populateHighScores(highScores);
 			$("#end_game_text").airport([ "You have outsmarted the zombies!",  "Play again?", "You have won!" ]);
-			$('#hint').html("");
-			done = true;
+			doEndGame();
 		} else {
 			guessesLeft--;
 			if(guessesLeft <= 0)
 			{
 				$("#end_game_text").airport([ "Your brains are Zombified!",  "Play again?", "You have lost!" ]);
-				$('#hint').html("");
-				done = true;
+				doEndGame();
 			} else {
 				if (guess > answer) {
 					$('#hint').html("Your guess is too high!");
