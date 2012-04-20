@@ -31,7 +31,8 @@ function theGuess() {
 	if(!done)
 	{
 		var guess = $("#guess").attr("value");
-		if (isNaN(guess) || guess == "")
+		if (isNaN(guess) || guess == "" || guess < 0
+		    || guess > 100)
 		{
 			$('#hint').html("Invalid input! Try again.");
 			return;
